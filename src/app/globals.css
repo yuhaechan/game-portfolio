@@ -21,6 +21,7 @@ a:focus-visible,button:focus-visible { outline:2px solid var(--accent); outline-
 .intro { padding:48px 0; background:#f5f6f7; border-bottom:1px solid #dfe2e6; }
 .section-inner { max-width:960px; margin:0 auto; padding:0 32px; }
 .projects-section { max-width:960px; margin:0 auto; padding:36px 32px 0; }
+.work-section + .work-section { margin-top:36px; padding-top:32px; border-top:1px solid var(--line); }
 .intro h1 { font-size:clamp(27px,3.4vw,34px); font-weight:600; line-height:1.45; letter-spacing:-1.2px; margin:0 0 14px; word-break:keep-all; }
 .intro p { color:var(--muted); max-width:660px; font-size:14px; line-height:1.8; margin:0; white-space:pre-wrap; word-break:keep-all; overflow-wrap:anywhere; }
 .intro .author { color:var(--text); font-size:14px; margin-bottom:8px; }
@@ -64,7 +65,7 @@ a:focus-visible,button:focus-visible { outline:2px solid var(--accent); outline-
 .project-pagination a:hover { text-decoration:underline; text-underline-offset:4px; }
 .project-pagination a:last-child { text-align:right; }
 .preview-banner { padding:10px 14px; margin:8px 0; background:#f3f5f7; border-radius:4px; font-size:12px; color:#646d7b; }
-.empty-state { padding:40px 0; color:var(--muted); font-size:14px; }
+.empty-state { margin:20px 0 0; padding:28px 20px; background:#f8f9fa; border-radius:4px; color:var(--muted); font-size:13px; text-align:center; }
 .message-page { max-width:700px; margin:auto; padding:80px 24px; }
 .message-page h1 { font-size:25px; margin:20px 0; }
 .message-page p { font-size:14px; color:var(--muted); line-height:1.8; }
@@ -77,6 +78,7 @@ a:focus-visible,button:focus-visible { outline:2px solid var(--accent); outline-
   .intro { padding:32px 0; }
   .section-inner { padding:0 22px; }
   .projects-section { padding:28px 22px 0; }
+  .work-section + .work-section { margin-top:28px; padding-top:28px; }
   .intro h1 { font-size:27px; letter-spacing:-.9px; }
   .intro p { font-size:13px; }
   .project-card { align-items:flex-start; flex-wrap:wrap; gap:12px; padding:23px 0; }

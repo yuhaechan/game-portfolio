@@ -1,5 +1,6 @@
 export interface PortfolioProject {
   id: string;
+  section: "portfolio" | "project";
   title: string;
   subtitle: string;
   category: string;
@@ -53,6 +54,8 @@ export function validateSnapshot(value: unknown): PortfolioSnapshot {
     const id = text(raw.id, 80);
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id) || ids.has(id)) throw new Error("프로젝트 주소는 중복 없는 영문 소문자·숫자·하이픈으로 입력하세요.");
     ids.add(id);
+    const section = raw.section ?? "portfolio";
+    if (section !== "portfolio" && section !== "project") throw new Error("포트폴리오 또는 프로젝트 영역을 선택하세요.");
     const fields = Object.fromEntries(projectTextFields.map(key => [key, text(raw[key], ["title", "category"].includes(key) ? 150 : 20000)])) as Pick<PortfolioProject, typeof projectTextFields[number]>;
     if (!fields.title) throw new Error("프로젝트 제목을 입력하세요.");
     if (raw.visibility !== "public" && raw.visibility !== "private") throw new Error("공개 여부가 올바르지 않습니다.");
@@ -72,7 +75,7 @@ export function validateSnapshot(value: unknown): PortfolioSnapshot {
       if (parsed.protocol !== "https:" || parsed.username || parsed.password || !["youtube.com", "www.youtube.com", "youtu.be", "vimeo.com", "www.vimeo.com"].includes(parsed.hostname) || !name) throw new Error("영상은 YouTube 또는 Vimeo의 HTTPS 주소를 입력하세요.");
       return { name, url };
     });
-    return { id, ...fields, visibility: raw.visibility, isExample: raw.isExample, cover, attachments, videos };
+    return { id, section, ...fields, visibility: raw.visibility, isExample: raw.isExample, cover, attachments, videos };
   });
   if (!Number.isSafeInteger(data.revision) || (data.revision as number) < 0) throw new Error("저장 버전을 확인하세요.");
   const publishedAt = data.publishedAt === null ? null : text(data.publishedAt, 40);

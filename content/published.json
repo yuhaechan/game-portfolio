@@ -2,11 +2,12 @@
   "title": "게임 기획 포트폴리오",
   "name": "",
   "introduction": "게임 기획자 유해찬의 포트폴리오입니다.",
-  "revision": 1,
-  "publishedAt": "2026-11-10T13:37:18.695Z",
+  "revision": 2,
+  "publishedAt": "2026-11-10T14:49:02.270Z",
   "projects": [
     {
       "id": "mabinogi-mobile",
+      "section": "portfolio",
       "title": "마비노기 모바일",
       "subtitle": "생활 콘텐츠 개선 제안서",
       "category": "UX 기획",
@@ -28,6 +29,7 @@
     },
     {
       "id": "crimson-desert",
+      "section": "portfolio",
       "title": "붉은사막",
       "subtitle": "상태별 입력 가이드 시스템",
       "category": "시스템·UI 기획",
@@ -49,6 +51,7 @@
     },
     {
       "id": "random-defense",
+      "section": "portfolio",
       "title": "랜덤 디펜스",
       "subtitle": "전투·합성 시스템",
       "category": "시스템 기획",
