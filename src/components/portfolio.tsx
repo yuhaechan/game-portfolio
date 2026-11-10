@@ -36,7 +36,7 @@ export function Portfolio({ snapshot, projectId }: { snapshot: PortfolioSnapshot
   return <>
     <a className="skip-link" href="#main">본문으로 이동</a>
     <header className="site-header-bar"><div className="site-header"><Link className="site-brand" href="/" onClick={event => navigate(event)}>포트폴리오</Link><Link className="header-link" href="/#projects" onClick={event => navigate(event)}>프로젝트</Link></div></header>
-    <main id="main" className="portfolio-main">
+    <main id="main" className={`portfolio-main${active ? "" : " portfolio-home"}`}>
       {preview && <p className="preview-banner">로컬 미리보기 · 비공개 프로젝트 포함</p>}
       {active ? <>
         <Link className="back-link" href="/#projects" onClick={event => navigate(event)}>← 프로젝트 목록</Link>
@@ -47,8 +47,8 @@ export function Portfolio({ snapshot, projectId }: { snapshot: PortfolioSnapshot
         {(active.attachments.length > 0 || active.videos.length > 0) && <section className="attachments"><h2>관련 자료</h2>{active.attachments.map(asset => <a key={asset.path} href={preview ? `http://127.0.0.1:4310${asset.path}` : assetUrl(asset.path)} target="_blank" rel="noopener noreferrer">{asset.name}<span>{asset.path.endsWith(".pdf") ? "PDF 열기 ↗" : "이미지 보기 ↗"}</span></a>)}{active.videos.map(video => <a key={video.url} href={video.url} target="_blank" rel="noopener noreferrer">{video.name}<span>영상 보기 ↗</span></a>)}</section>}
         <nav className="project-pagination" aria-label="다른 프로젝트">{projects[index - 1] ? <Link href={`/projects/${projects[index - 1].id}/`} onClick={event => navigate(event, projects[index - 1].id)}>← {projects[index - 1].title}</Link> : <span/>}{projects[index + 1] && <Link href={`/projects/${projects[index + 1].id}/`} onClick={event => navigate(event, projects[index + 1].id)}>{projects[index + 1].title} →</Link>}</nav>
       </> : <>
-        <section className="intro"><h1>{data.title}</h1>{data.name && <p className="author">{data.name}</p>}{data.introduction && <p>{data.introduction}</p>}</section>
-        <section id="projects" aria-labelledby="projects-title">
+        <section className="intro" aria-labelledby="portfolio-title"><div className="section-inner"><h1 id="portfolio-title">{data.title}</h1>{data.name && <p className="author">{data.name}</p>}{data.introduction && <p>{data.introduction}</p>}</div></section>
+        <section id="projects" className="projects-section" aria-labelledby="projects-title">
           <div className="section-title"><h2 id="projects-title">프로젝트</h2><span>{projects.length}개</span></div>
           <div className="project-list">{projects.map(project => (
             <Link className="project-card" key={project.id} href={`/projects/${project.id}/`} onClick={event => navigate(event, project.id)}>
