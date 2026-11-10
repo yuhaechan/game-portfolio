@@ -20,16 +20,16 @@ a:focus-visible,button:focus-visible { outline:2px solid var(--accent); outline-
 .portfolio-home { max-width:none; min-height:calc(100svh - 64px); padding:0 0 64px; background:#eef0f3; }
 .intro { padding:48px 0; background:#fff; border-bottom:1px solid #dfe2e6; }
 .section-inner { max-width:960px; margin:0 auto; padding:0 32px; }
-.projects-section { width:calc(100% - 64px); max-width:896px; margin:32px auto 0; padding:28px; background:#fff; border:2px solid #000; border-radius:14px; }
-.work-section + .work-section { margin-top:24px; }
-.work-section .project-card:last-child { padding-bottom:4px; border-bottom:0; }
+.projects-section { width:calc(100% - 64px); max-width:896px; margin:32px auto 0; padding:0; }
+.work-section + .work-section { margin-top:40px; }
+.project-list { display:grid; gap:16px; margin-top:20px; }
 .intro h1 { font-size:clamp(27px,3.4vw,34px); font-weight:600; line-height:1.45; letter-spacing:-1.2px; margin:0 0 14px; word-break:keep-all; }
 .intro p { color:var(--muted); max-width:660px; font-size:14px; line-height:1.8; margin:0; white-space:pre-wrap; word-break:keep-all; overflow-wrap:anywhere; }
 .intro .author { color:var(--text); font-size:14px; margin-bottom:8px; }
 .section-title { display:flex; align-items:baseline; gap:8px; padding:0 0 16px; border-bottom:1px solid #d8dade; }
 .section-title h2 { font-size:14px; font-weight:600; margin:0; }
 .section-title span { color:var(--muted); font-size:12px; }
-.project-card { display:flex; align-items:center; gap:24px; padding:26px 0; border-bottom:1px solid var(--line); }
+.project-card { display:flex; align-items:center; gap:24px; padding:24px 28px; border:2px solid #000; border-radius:14px; background:#fff; }
 .project-card:hover { background:#fafbfc; }
 .project-card-copy { flex:1; min-width:0; }
 .project-name { display:flex; align-items:center; flex-wrap:wrap; gap:9px; margin-bottom:6px; }
@@ -66,7 +66,7 @@ a:focus-visible,button:focus-visible { outline:2px solid var(--accent); outline-
 .project-pagination a:hover { text-decoration:underline; text-underline-offset:4px; }
 .project-pagination a:last-child { text-align:right; }
 .preview-banner { padding:10px 14px; margin:8px 0; background:#f3f5f7; border-radius:4px; font-size:12px; color:#646d7b; }
-.empty-state { margin:20px 0 0; padding:28px 20px; background:#f8f9fa; border-radius:4px; color:var(--muted); font-size:13px; text-align:center; }
+.empty-state { margin:20px 0 0; padding:24px 0; color:var(--muted); font-size:13px; text-align:center; }
 .message-page { max-width:700px; margin:auto; padding:80px 24px; }
 .message-page h1 { font-size:25px; margin:20px 0; }
 .message-page p { font-size:14px; color:var(--muted); line-height:1.8; }
@@ -78,11 +78,11 @@ a:focus-visible,button:focus-visible { outline:2px solid var(--accent); outline-
   .portfolio-home { min-height:calc(100svh - 56px); padding:0 0 40px; }
   .intro { padding:32px 0; }
   .section-inner { padding:0 22px; }
-  .projects-section { width:calc(100% - 32px); margin-top:24px; padding:20px; border-radius:12px; }
-  .work-section + .work-section { margin-top:20px; }
+  .projects-section { width:calc(100% - 32px); margin-top:24px; padding:0; }
+  .work-section + .work-section { margin-top:32px; }
   .intro h1 { font-size:27px; letter-spacing:-.9px; }
   .intro p { font-size:13px; }
-  .project-card { align-items:flex-start; flex-wrap:wrap; gap:12px; padding:23px 0; }
+  .project-card { align-items:flex-start; flex-wrap:wrap; gap:12px; padding:20px; border-radius:12px; }
   .project-card-copy { flex-basis:calc(100% - 34px); }
   .project-name h3 { font-size:19px; }
   .card-subtitle { font-size:13px; }
