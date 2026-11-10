@@ -35,7 +35,7 @@ export function Portfolio({ snapshot, projectId }: { snapshot: PortfolioSnapshot
   }
   return <>
     <a className="skip-link" href="#main">본문으로 이동</a>
-    <header className="site-header"><Link className="site-brand" href="/" onClick={event => navigate(event)}>포트폴리오</Link><Link className="header-link" href="/#projects" onClick={event => navigate(event)}>프로젝트</Link></header>
+    <header className="site-header-bar"><div className="site-header"><Link className="site-brand" href="/" onClick={event => navigate(event)}>포트폴리오</Link><Link className="header-link" href="/#projects" onClick={event => navigate(event)}>프로젝트</Link></div></header>
     <main id="main" className="portfolio-main">
       {preview && <p className="preview-banner">로컬 미리보기 · 비공개 프로젝트 포함</p>}
       {active ? <>

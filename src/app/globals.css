@@ -9,10 +9,13 @@ button { cursor:pointer; font:inherit; }
 a:focus-visible,button:focus-visible { outline:2px solid var(--accent); outline-offset:5px; }
 .skip-link { position:fixed; top:10px; left:20px; padding:10px 16px; background:#25272b; color:white; z-index:20; transform:translateY(-150%); }
 .skip-link:focus { transform:translateY(0); }
-.site-header { max-width:960px; min-height:88px; margin:0 auto; padding:24px 32px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+.site-header-bar { background:#111; color:#fff; }
+.site-header { max-width:960px; min-height:64px; margin:0 auto; padding:12px 32px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
 .site-brand { font-size:14px; font-weight:600; letter-spacing:-.3px; }
-.header-link { color:var(--muted); font-size:13px; padding:8px 0; }
-.header-link:hover,.back-link:hover { color:var(--text); text-decoration:underline; text-underline-offset:4px; }
+.header-link { color:#d6d6d6; font-size:13px; padding:8px 0; }
+.header-link:hover { color:#fff; text-decoration:underline; text-underline-offset:4px; }
+.site-header a:focus-visible { outline-color:#fff; }
+.back-link:hover { color:var(--text); text-decoration:underline; text-underline-offset:4px; }
 .portfolio-main { max-width:960px; margin:0 auto; padding:0 32px 88px; }
 .intro { padding:48px 0 52px; }
 .intro h1 { font-size:clamp(27px,3.4vw,34px); font-weight:600; line-height:1.45; letter-spacing:-1.2px; margin:0 0 14px; word-break:keep-all; }
@@ -65,7 +68,7 @@ a:focus-visible,button:focus-visible { outline:2px solid var(--accent); outline-
 .text-button { display:inline-block; margin-top:18px; text-decoration:underline; font-size:14px; }
 .button { border:1px solid var(--line); background:white; padding:12px 18px; border-radius:4px; }
 @media(max-width:640px) {
-  .site-header { min-height:72px; padding:18px 22px; }
+  .site-header { min-height:56px; padding:8px 22px; }
   .portfolio-main { padding:0 22px 56px; }
   .intro { padding:32px 0 38px; }
   .intro h1 { font-size:27px; letter-spacing:-.9px; }
