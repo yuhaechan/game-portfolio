@@ -17,11 +17,12 @@ a:focus-visible,button:focus-visible { outline:2px solid var(--accent); outline-
 .site-header a:focus-visible { outline-color:#fff; }
 .back-link:hover { color:var(--text); text-decoration:underline; text-underline-offset:4px; }
 .portfolio-main { max-width:960px; margin:0 auto; padding:0 32px 88px; }
-.portfolio-home { max-width:none; padding:0 0 88px; }
-.intro { padding:48px 0; background:#f5f6f7; border-bottom:1px solid #dfe2e6; }
+.portfolio-home { max-width:none; min-height:calc(100svh - 64px); padding:0 0 64px; background:#eef0f3; }
+.intro { padding:48px 0; background:#fff; border-bottom:1px solid #dfe2e6; }
 .section-inner { max-width:960px; margin:0 auto; padding:0 32px; }
-.projects-section { max-width:960px; margin:0 auto; padding:36px 32px 0; }
-.work-section + .work-section { margin-top:36px; padding-top:32px; border-top:1px solid var(--line); }
+.projects-section { width:calc(100% - 64px); max-width:896px; margin:32px auto 0; padding:28px; background:#fff; border:2px solid #000; border-radius:14px; }
+.work-section + .work-section { margin-top:24px; }
+.work-section .project-card:last-child { padding-bottom:4px; border-bottom:0; }
 .intro h1 { font-size:clamp(27px,3.4vw,34px); font-weight:600; line-height:1.45; letter-spacing:-1.2px; margin:0 0 14px; word-break:keep-all; }
 .intro p { color:var(--muted); max-width:660px; font-size:14px; line-height:1.8; margin:0; white-space:pre-wrap; word-break:keep-all; overflow-wrap:anywhere; }
 .intro .author { color:var(--text); font-size:14px; margin-bottom:8px; }
@@ -74,11 +75,11 @@ a:focus-visible,button:focus-visible { outline:2px solid var(--accent); outline-
 @media(max-width:640px) {
   .site-header { min-height:56px; padding:8px 22px; }
   .portfolio-main { padding:0 22px 56px; }
-  .portfolio-home { padding:0 0 56px; }
+  .portfolio-home { min-height:calc(100svh - 56px); padding:0 0 40px; }
   .intro { padding:32px 0; }
   .section-inner { padding:0 22px; }
-  .projects-section { padding:28px 22px 0; }
-  .work-section + .work-section { margin-top:28px; padding-top:28px; }
+  .projects-section { width:calc(100% - 32px); margin-top:24px; padding:20px; border-radius:12px; }
+  .work-section + .work-section { margin-top:20px; }
   .intro h1 { font-size:27px; letter-spacing:-.9px; }
   .intro p { font-size:13px; }
   .project-card { align-items:flex-start; flex-wrap:wrap; gap:12px; padding:23px 0; }
