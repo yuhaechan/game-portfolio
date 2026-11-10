@@ -43,8 +43,7 @@ export function Portfolio({ snapshot, projectId }: { snapshot: PortfolioSnapshot
         <div className="project-list">{entries.map(project => (
           <Link className="project-card" key={project.id} href={`/projects/${project.id}/`} onClick={event => navigate(event, project.id)}>
             <div className="project-card-copy">
-              <div className="project-name"><h3>{project.title}</h3>{project.isExample && <span className="example-label">예시</span>}</div>
-              {project.subtitle && <p className="card-subtitle">{project.subtitle}</p>}
+              <div className="project-name"><h3>{project.subtitle ? <><span className="game-title">{project.title}</span><span className="title-divider" aria-hidden="true">/</span><span className="work-title">{project.subtitle}</span></> : <span className="work-title">{project.title}</span>}</h3>{project.isExample && <span className="example-label">예시</span>}</div>
               {project.summary && <p className="card-summary">{project.summary}</p>}
             </div>
             {project.cover && <img src={preview ? `http://127.0.0.1:4310${project.cover}` : assetUrl(project.cover)} alt="" className="project-thumbnail" loading="lazy" />}

@@ -32,9 +32,12 @@ a:focus-visible,button:focus-visible { outline:2px solid var(--accent); outline-
 .project-card { display:flex; align-items:center; gap:24px; padding:24px 28px; border:2px solid #000; border-radius:14px; background:#fff; }
 .project-card:hover { background:#fafbfc; }
 .project-card-copy { flex:1; min-width:0; }
-.project-name { display:flex; align-items:center; flex-wrap:wrap; gap:9px; margin-bottom:6px; }
-.project-name h3 { margin:0; font-size:20px; font-weight:600; letter-spacing:-.55px; line-height:1.5; overflow-wrap:anywhere; }
-.project-card:hover h3 { text-decoration:underline; text-underline-offset:5px; text-decoration-thickness:1px; }
+.project-name { display:flex; align-items:baseline; flex-wrap:wrap; gap:9px; margin-bottom:10px; }
+.project-name h3 { display:flex; align-items:baseline; flex-wrap:wrap; gap:6px 9px; margin:0; font-size:20px; font-weight:600; letter-spacing:-.55px; line-height:1.6; overflow-wrap:anywhere; }
+.game-title { font-size:14px; font-weight:500; color:#575c64; letter-spacing:-.25px; }
+.title-divider { color:#a3a7ad; font-size:14px; font-weight:400; }
+.work-title { font-weight:600; word-break:keep-all; }
+.project-card:hover .work-title { text-decoration:underline; text-underline-offset:5px; text-decoration-thickness:1px; }
 .card-subtitle { color:#41454c; font-size:14px; line-height:1.65; margin:0 0 7px; overflow-wrap:anywhere; }
 .card-summary { color:var(--muted); font-size:13px; line-height:1.75; margin:0; overflow-wrap:anywhere; }
 .project-tail { display:flex; align-items:center; gap:24px; margin-left:auto; flex-shrink:0; }
