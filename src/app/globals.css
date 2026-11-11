@@ -27,6 +27,12 @@ a:focus-visible,button:focus-visible { outline:2px solid var(--accent); outline-
 .projects-section { width:calc(100% - 64px); max-width:896px; margin:32px auto 0; padding:0; }
 .work-section + .work-section { margin-top:40px; }
 .project-list { display:grid; gap:16px; margin-top:20px; }
+.portfolio-group { margin-top:24px; }
+.portfolio-group + .portfolio-group { margin-top:36px; }
+.portfolio-group-title { display:flex; align-items:baseline; gap:8px; }
+.portfolio-group-title h3 { margin:0; font-size:16px; font-weight:700; color:#16181c; }
+.portfolio-group-title span { font-size:12px; color:var(--muted); }
+.portfolio-group .project-list { margin-top:14px; }
 .intro h1 { font-size:clamp(27px,3.4vw,34px); font-weight:600; line-height:1.45; letter-spacing:-1.2px; margin:0 0 14px; word-break:keep-all; }
 .intro p { color:var(--muted); max-width:660px; font-size:14px; line-height:1.8; margin:0; white-space:pre-wrap; word-break:keep-all; overflow-wrap:anywhere; }
 .intro .author { color:var(--text); font-size:14px; margin-bottom:8px; }
@@ -41,7 +47,7 @@ a:focus-visible,button:focus-visible { outline:2px solid var(--accent); outline-
 }
 .project-card-copy { flex:1; min-width:0; }
 .project-name { display:flex; align-items:flex-end; flex-wrap:wrap; gap:9px; margin-bottom:10px; }
-.project-name h3 { display:flex; flex-direction:column; align-items:flex-start; gap:6px; margin:0; font-size:20px; font-weight:600; letter-spacing:-.55px; line-height:1.6; overflow-wrap:anywhere; }
+.project-name h3,.project-name h4 { display:flex; flex-direction:column; align-items:flex-start; gap:6px; margin:0; font-size:20px; font-weight:600; letter-spacing:-.55px; line-height:1.6; overflow-wrap:anywhere; }
 .game-title { font-size:14px; font-weight:700; color:#000; letter-spacing:-.25px; }
 .work-title { font-weight:600; word-break:keep-all; }
 .card-subtitle { color:#41454c; font-size:14px; line-height:1.65; margin:0 0 7px; overflow-wrap:anywhere; }
@@ -74,6 +80,12 @@ a:focus-visible,button:focus-visible { outline:2px solid var(--accent); outline-
 .project-pagination { display:flex; justify-content:space-between; gap:24px; margin-top:44px; padding-top:23px; border-top:1px solid #d8dade; font-size:13px; }
 .project-pagination a:hover { text-decoration:underline; text-underline-offset:4px; }
 .project-pagination a:last-child { text-align:right; }
+.project-videos { margin:32px 0 0; padding-top:24px; border-top:1px solid #c9cdd2; }
+.portfolio-document .project-videos { margin-left:var(--pdf-gutter); margin-right:var(--pdf-gutter); }
+.project-videos h2 { font-size:20px; font-weight:700; margin:0 0 18px; color:#000; }
+.project-videos figure { margin:0 0 24px; }
+.project-videos figcaption { font-size:14px; color:#41454c; margin-bottom:12px; }
+.project-videos video { display:block; width:100%; max-height:80svh; border-radius:8px; background:#111; }
 .preview-banner { padding:10px 14px; margin:8px 0; background:#f3f5f7; border-radius:4px; font-size:12px; color:#646d7b; }
 .empty-state { margin:20px 0 0; padding:24px 0; color:var(--muted); font-size:13px; text-align:center; }
 .message-page { max-width:700px; margin:auto; padding:80px 24px; }
@@ -147,7 +159,7 @@ a:focus-visible,button:focus-visible { outline:2px solid var(--accent); outline-
   .intro p { font-size:13px; }
   .project-card { align-items:flex-start; flex-wrap:wrap; gap:16px; padding:24px 20px; border-radius:12px; }
   .project-card-copy { flex-basis:calc(100% - 34px); }
-  .project-name h3 { font-size:19px; }
+  .project-name h3,.project-name h4 { font-size:19px; }
   .card-subtitle { font-size:13px; }
   .card-summary { font-size:12px; }
   .project-tail { width:100%; margin:0; gap:12px; justify-content:space-between; }

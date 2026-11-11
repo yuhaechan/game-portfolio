@@ -3,7 +3,7 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
-import { assetUrl, type PortfolioSnapshot, type PortfolioProject } from "@/lib/portfolio";
+import { assetUrl, videoAssetPattern, type PortfolioSnapshot, type PortfolioProject } from "@/lib/portfolio";
 
 const PdfViewer = dynamic(() => import("./pdf-viewer"), { ssr: false, loading: () => <p className="preview-banner">문서 뷰어를 불러오는 중…</p> });
 
@@ -37,8 +37,6 @@ export function Portfolio({ snapshot, projectId }: { snapshot: PortfolioSnapshot
   }, []);
   const projects = data.projects;
   const active = projects.find(project => project.id === selection);
-  const related = active ? projects.filter(project => project.section === active.section) : [];
-  const index = active ? related.indexOf(active) : -1;
   function navigate(event: React.MouseEvent, id?: string) {
     if (!preview) return;
     event.preventDefault(); setSelection(id); window.scrollTo(0, 0);
@@ -46,20 +44,27 @@ export function Portfolio({ snapshot, projectId }: { snapshot: PortfolioSnapshot
   function collection(section: PortfolioProject["section"], title: string) {
     const entries = projects.filter(project => project.section === section);
     const anchor = section === "portfolio" ? "portfolio" : "projects";
-    return (
-      <section id={anchor} className="projects-section work-section" aria-labelledby={`${anchor}-list-title`}>
-        <div className="section-title"><h2 id={`${anchor}-list-title`}>{title}</h2><span>{entries.length}개</span></div>
-        <div className="project-list">{entries.map(project => {
+    const CardTitle = section === "portfolio" ? "h4" : "h3";
+    function cards(items: PortfolioProject[]) {
+      return <div className="project-list">{items.map(project => {
           return (
           <Link className="project-card" key={project.id} href={`/projects/${project.id}/`} onClick={event => navigate(event, project.id)}>
             <div className="project-card-copy">
-              <div className="project-name"><h3>{project.subtitle ? <><span className="game-title">{project.title}</span><span className="work-title">{project.subtitle}</span></> : <span className="work-title">{project.title}</span>}</h3>{project.isExample && <span className="example-label">예시</span>}</div>
+              <div className="project-name"><CardTitle>{project.subtitle ? <><span className="game-title">{project.title}</span><span className="work-title">{project.subtitle}</span></> : <span className="work-title">{project.title}</span>}</CardTitle>{project.isExample && <span className="example-label">예시</span>}</div>
               {project.summary && <p className="card-summary">{project.summary}</p>}
             </div>
             {project.cover && <img src={preview ? `http://127.0.0.1:4310${project.cover}` : assetUrl(project.cover)} alt="" className="project-thumbnail" loading="lazy" />}
             <div className="project-tail">{project.category && <span className="category">{project.category}</span>}<Chevron /></div>
           </Link>
-        );})}</div>
+        );})}</div>;
+    }
+    return (
+      <section id={anchor} className="projects-section work-section" aria-labelledby={`${anchor}-list-title`}>
+        <div className="section-title"><h2 id={`${anchor}-list-title`}>{title}</h2><span>{entries.length}개</span></div>
+        {section === "portfolio" ? ([['game', '게임 기획'], ['app', '앱·서비스']] as const).map(([kind, label]) => {
+          const items = entries.filter(project => (project.kind || "game") === kind);
+          return items.length > 0 && <div className="portfolio-group" key={kind}><div className="portfolio-group-title"><h3>{label}</h3><span>{items.length}개</span></div>{cards(items)}</div>;
+        }) : cards(entries)}
         {!entries.length && <p className="empty-state">등록된 {title === "포트폴리오" ? "포트폴리오가" : "프로젝트가"} 없습니다.</p>}
       </section>
     );
@@ -82,7 +87,16 @@ export function Portfolio({ snapshot, projectId }: { snapshot: PortfolioSnapshot
         <div className="detail-content">{sections.filter(([key]) => active[key]).map(([key, title]) => <section key={key}><h2>{title}</h2><p>{String(active[key])}</p></section>)}</div>
         {(active.attachments.length > 0 || active.videos.length > 0) && <section className="attachments"><h2>관련 자료</h2>{active.attachments.map(asset => <a key={asset.path} href={preview ? `http://127.0.0.1:4310${asset.path}` : assetUrl(asset.path)} target="_blank" rel="noopener noreferrer">{asset.name}<span>{asset.path.endsWith(".pdf") ? "PDF 열기 ↗" : "이미지 보기 ↗"}</span></a>)}{active.videos.map(video => <a key={video.url} href={video.url} target="_blank" rel="noopener noreferrer">{video.name}<span>영상 보기 ↗</span></a>)}</section>}
         </>}
-        <nav className="project-pagination" aria-label="다른 항목">{related[index - 1] ? <Link href={`/projects/${related[index - 1].id}/`} onClick={event => navigate(event, related[index - 1].id)}>← {related[index - 1].title}</Link> : <span/>}{related[index + 1] && <Link href={`/projects/${related[index + 1].id}/`} onClick={event => navigate(event, related[index + 1].id)}>{related[index + 1].title} →</Link>}</nav>
+        {active.videos.some(video => videoAssetPattern.test(video.url)) && <section className="project-videos" aria-labelledby="project-videos-title">
+          <h2 id="project-videos-title">참고자료</h2>
+          {active.videos.filter(video => videoAssetPattern.test(video.url)).map(video => <figure key={video.url}>
+            <figcaption>{video.name}</figcaption>
+            <video controls playsInline preload="metadata" controlsList="nodownload" aria-label={video.name}>
+              <source src={preview ? `http://127.0.0.1:4310${video.url}` : assetUrl(video.url)} type="video/mp4" />
+              이 브라우저에서는 영상을 재생할 수 없습니다.
+            </video>
+          </figure>)}
+        </section>}
       </> : <>
         <section className="intro" aria-labelledby="portfolio-title"><div className="section-inner"><h1 id="portfolio-title">{data.title}</h1>{data.name && <p className="author">{data.name}</p>}{data.introduction && <p>{data.introduction}</p>}</div></section>
         {collection("portfolio", "포트폴리오")}

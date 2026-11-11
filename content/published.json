@@ -2,12 +2,13 @@
   "title": "게임 기획 포트폴리오",
   "name": "",
   "introduction": "게임 기획자 유해찬의 포트폴리오입니다.",
-  "revision": 7,
-  "publishedAt": "2026-11-11T11:44:26.105Z",
+  "revision": 10,
+  "publishedAt": "2026-11-11T17:55:26.703Z",
   "projects": [
     {
       "id": "mabinogi-mobile",
       "section": "portfolio",
+      "kind": "game",
       "title": "모바일 마비노기",
       "subtitle": "가공 시스템 개선 제안서",
       "category": "",
@@ -35,6 +36,7 @@
     {
       "id": "crimson-desert",
       "section": "portfolio",
+      "kind": "game",
       "title": "붉은사막",
       "subtitle": "상황별 조작 안내 UI",
       "category": "",
@@ -58,6 +60,39 @@
         }
       ],
       "videos": []
+    },
+    {
+      "id": "store-helper-app",
+      "section": "portfolio",
+      "kind": "app",
+      "title": "매장 도우미",
+      "subtitle": "판매·정산 관리 앱 포트폴리오",
+      "category": "",
+      "summary": "",
+      "role": "",
+      "tools": "",
+      "period": "",
+      "overview": "",
+      "purpose": "",
+      "problem": "",
+      "analysis": "",
+      "solution": "",
+      "validation": "",
+      "visibility": "public",
+      "isExample": false,
+      "cover": "",
+      "attachments": [
+        {
+          "name": "매장 도우미 포트폴리오 · 전체 PDF (17쪽)",
+          "path": "/media/10837b72-79de-4c75-8b1d-a1375cafd447.pdf"
+        }
+      ],
+      "videos": [
+        {
+          "name": "매장 도우미 제품 소개",
+          "url": "/media/96e71f67-dc5d-41a1-b637-6fcddb5634a9.mp4"
+        }
+      ]
     }
   ]
 }
