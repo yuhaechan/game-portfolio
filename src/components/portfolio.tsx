@@ -14,7 +14,7 @@ function Chevron() {
 }
 
 function originalPdf(project: PortfolioProject) {
-  return project.section === "portfolio" && ![project.summary, ...sections.map(([key]) => project[key])].some(Boolean)
+  return ![project.summary, ...sections.map(([key]) => project[key])].some(Boolean)
     ? project.attachments.find(asset => asset.path.endsWith(".pdf"))
     : undefined;
 }

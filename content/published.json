@@ -2,8 +2,8 @@
   "title": "게임 기획 포트폴리오",
   "name": "",
   "introduction": "게임 기획자 유해찬의 포트폴리오입니다.",
-  "revision": 10,
-  "publishedAt": "2026-11-11T17:55:26.703Z",
+  "revision": 11,
+  "publishedAt": "2026-11-11T18:09:02.289Z",
   "projects": [
     {
       "id": "mabinogi-mobile",
@@ -63,7 +63,7 @@
     },
     {
       "id": "store-helper-app",
-      "section": "portfolio",
+      "section": "project",
       "kind": "app",
       "title": "매장 도우미",
       "subtitle": "판매·정산 관리 앱 포트폴리오",
