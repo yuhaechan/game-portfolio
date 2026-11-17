@@ -91,6 +91,33 @@ a:focus-visible,button:focus-visible { outline:2px solid var(--accent); outline-
 .project-videos figure { margin:0 0 24px; }
 .project-videos figcaption { font-size:14px; color:#41454c; margin-bottom:12px; }
 .project-videos video { display:block; width:100%; max-height:80svh; border-radius:8px; background:#111; }
+.planning-documents { margin:32px var(--pdf-gutter,0px) 0; padding-top:24px; border-top:1px solid #c9cdd2; }
+.planning-documents h2 { margin:0 0 18px; font-size:20px; font-weight:700; color:#000; }
+.planning-document-list { border-top:1px solid var(--line); }
+.planning-document-list > button { display:flex; align-items:center; justify-content:space-between; gap:20px; width:100%; padding:22px 0; border:0; border-bottom:1px solid var(--line); background:transparent; color:var(--text); font-size:14px; text-align:left; line-height:1.7; }
+.planning-document-list > button:hover { background:#f5f6f8; }
+.planning-document-action { display:inline-flex; align-items:center; gap:8px; flex-shrink:0; color:var(--muted); font-size:12px; }
+.planning-document-dialog { width:calc(100vw - 48px); max-width:1360px; height:92dvh; max-height:92dvh; margin:auto; padding:0; border:1px solid #c9cdd2; border-radius:12px; background:#fff; color:var(--text); }
+.planning-document-dialog::backdrop { background:rgb(0 0 0 / 65%); }
+.planning-document-dialog[open] { display:flex; flex-direction:column; overflow:hidden; }
+.planning-document-dialog > header { position:sticky; top:0; z-index:2; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:18px 24px; border-bottom:1px solid var(--line); background:#fff; }
+.planning-document-dialog > header h2 { margin:0; font-size:17px; line-height:1.6; }
+.planning-document-dialog > header button { flex-shrink:0; padding:8px 12px; border:1px solid #c9cdd2; border-radius:6px; background:#fff; color:var(--text); font-size:13px; }
+.planning-document-dialog > header button:hover { background:#181a1e; color:#fff; }
+.planning-document-body { flex:1; padding:0 12px; overflow:auto; min-height:0; scrollbar-gutter:stable; }
+.planning-document-body > .pdf-viewer { margin-bottom:0; }
+.pdf-initial-loading .pdf-stage canvas { visibility:hidden; }
+.pdf-initial-loading > .pdf-status { inset:0; left:0; top:0; transform:none; display:grid; place-items:center; padding:24px; border-radius:0; background:#fff; color:#646d7b; text-align:center; }
+.pdf-initial-loading > .pdf-turn,.pdf-initial-loading > .pdf-toolbar { visibility:hidden; }
+.planning-document-dialog > header { flex-shrink:0; }
+.planning-document-switcher { flex-shrink:0; padding:16px 24px; border-top:1px solid #dfe2e6; background:#fff; max-height:30dvh; overflow:auto; }
+.planning-document-switcher > p { margin:0 0 10px; font-size:12px; font-weight:700; color:#41454c; }
+.planning-document-switcher > div { border-top:1px solid var(--line); }
+.planning-document-switcher button { display:flex; align-items:center; justify-content:space-between; gap:20px; width:100%; min-height:48px; padding:12px; border:0; border-bottom:1px solid var(--line); background:#fff; color:#41454c; font-size:12px; line-height:1.6; text-align:left; overflow-wrap:anywhere; }
+.planning-document-switcher button:hover { background:#f5f6f8; color:#000; }
+.planning-document-switcher button[aria-current=true] { background:#fff; color:#181a1e; box-shadow:inset 0 0 0 2px #181a1e; font-weight:700; }
+.planning-document-switcher button[aria-current=true] .planning-document-action { color:inherit; }
+.planning-document-switcher strong { font-size:11px; font-weight:700; }
 .preview-banner { padding:10px 14px; margin:8px 0; background:#f3f5f7; border-radius:4px; font-size:12px; color:#646d7b; }
 .empty-state { margin:20px 0 0; padding:24px 0; color:var(--muted); font-size:13px; text-align:center; }
 .message-page { max-width:700px; margin:auto; padding:80px 24px; }
@@ -162,6 +189,14 @@ a:focus-visible,button:focus-visible { outline:2px solid var(--accent); outline-
   .work-section + .work-section { margin-top:32px; }
   .intro h1 { font-size:27px; letter-spacing:-.9px; }
   .intro p { font-size:13px; }
+  .planning-documents { margin-left:0; margin-right:0; }
+  .planning-document-dialog { width:calc(100vw - 16px); height:min(92dvh,calc(56.25vw + 380px)); }
+  .planning-document-dialog > header { padding:14px; }
+  .planning-document-dialog > header h2 { font-size:14px; }
+  .planning-document-list > button { gap:12px; }
+  .planning-document-action { font-size:11px; }
+  .planning-document-switcher { padding:12px 14px; }
+  .planning-document-switcher button { gap:12px; padding:10px 8px; }
   .project-card { align-items:flex-start; flex-wrap:wrap; gap:16px; padding:24px 20px; border-radius:12px; }
   .project-card-copy { flex-basis:calc(100% - 34px); }
   .project-name h3,.project-name h4 { font-size:19px; }

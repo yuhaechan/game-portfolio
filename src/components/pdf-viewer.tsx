@@ -8,7 +8,7 @@ import PdfPageInput from "./pdf-page-input";
 
 const PdfFullscreen = dynamic(() => import("./pdf-fullscreen"), { ssr: false });
 
-export default function PdfViewer({ src, title }: { src: string; title: string }) {
+export default function PdfViewer({ src, title, loadingScreen = false }: { src: string; title: string; loadingScreen?: boolean }) {
   const canvas = useRef<HTMLCanvasElement>(null);
   const frame = useRef<HTMLDivElement>(null);
   const [document, setDocument] = useState<PDFDocumentProxy>();
@@ -103,7 +103,7 @@ export default function PdfViewer({ src, title }: { src: string; title: string }
     return () => { disposed = true; };
   }, [document, page, width, zoom]);
 
-  return <section className="pdf-viewer" aria-label={`${title} 문서 보기`} tabIndex={0} onKeyDown={event => {
+  return <section className={`pdf-viewer${loadingScreen && !hasFrame ? " pdf-initial-loading" : ""}`} aria-label={`${title} 문서 보기`} tabIndex={0} onKeyDown={event => {
     if ((event.target as HTMLElement).tagName === "SELECT" || !document) return;
     if (event.key === "ArrowRight") { event.preventDefault(); setPage(value => Math.min(document.numPages, value + 1)); }
     if (event.key === "ArrowLeft") { event.preventDefault(); setPage(value => Math.max(1, value - 1)); }

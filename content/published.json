@@ -2,8 +2,8 @@
   "title": "게임 기획 포트폴리오",
   "name": "",
   "introduction": "게임 기획자 유해찬의 포트폴리오입니다.",
-  "revision": 11,
-  "publishedAt": "2026-11-11T18:09:02.289Z",
+  "revision": 17,
+  "publishedAt": "2026-11-17T03:51:33.919Z",
   "projects": [
     {
       "id": "mabinogi-mobile",
@@ -93,6 +93,50 @@
           "url": "/media/96e71f67-dc5d-41a1-b637-6fcddb5634a9.mp4"
         }
       ]
+    },
+    {
+      "id": "for-est-ui",
+      "section": "project",
+      "kind": "game",
+      "title": "For.EST · 에스트를 위해",
+      "subtitle": "UI 기획 — 로비·인게임·대화창",
+      "category": "",
+      "summary": "",
+      "role": "",
+      "tools": "",
+      "period": "",
+      "overview": "",
+      "purpose": "",
+      "problem": "",
+      "analysis": "",
+      "solution": "",
+      "validation": "",
+      "visibility": "public",
+      "isExample": false,
+      "cover": "",
+      "attachments": [
+        {
+          "name": "For.EST UI 기획 포트폴리오 · 전체 PDF (11쪽)",
+          "path": "/media/8d275ecc-c4a8-4fba-9cc0-f125f0ce8483.pdf"
+        },
+        {
+          "name": "로비 UI 기획서 · v1.0.2",
+          "path": "/media/eaa529f9-ff7f-40be-86f2-4400095ccc8f.pdf"
+        },
+        {
+          "name": "인게임 UI 기획서 · v0.0.4 · 현재 적용본 (사운드·언어)",
+          "path": "/media/6e0908d8-5471-460e-ba84-86e5b117bf5d.pdf"
+        },
+        {
+          "name": "인게임 UI 기획서 · v1.0.1 · 개선안 (미적용)",
+          "path": "/media/23ec3fbb-5199-4e05-81f6-2c1cca45a1b9.pdf"
+        },
+        {
+          "name": "대화창 UI 기획서 · v1.0.0",
+          "path": "/media/4282e6d4-73cf-454e-9a86-5d7aade9428c.pdf"
+        }
+      ],
+      "videos": []
     }
   ]
 }

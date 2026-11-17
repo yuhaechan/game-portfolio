@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { assetUrl, videoAssetPattern, type PortfolioSnapshot, type PortfolioProject } from "@/lib/portfolio";
 
 const PdfViewer = dynamic(() => import("./pdf-viewer"), { ssr: false, loading: () => <p className="preview-banner">문서 뷰어를 불러오는 중…</p> });
@@ -17,6 +17,34 @@ function originalPdf(project: PortfolioProject) {
   return ![project.summary, ...sections.map(([key]) => project[key])].some(Boolean)
     ? project.attachments.find(asset => asset.path.endsWith(".pdf"))
     : undefined;
+}
+
+function PlanningDocuments({ documents, preview }: { documents: PortfolioProject["attachments"]; preview: boolean }) {
+  const [selected, setSelected] = useState<PortfolioProject["attachments"][number]>();
+  const dialog = useRef<HTMLDialogElement>(null);
+  const backdropPressed = useRef(false);
+  const isOpen = Boolean(selected);
+  function outsideDialog(event: React.PointerEvent<HTMLDialogElement>) {
+    const bounds = event.currentTarget.getBoundingClientRect();
+    return event.target === event.currentTarget && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom);
+  }
+  useEffect(() => {
+    if (!isOpen) return;
+    dialog.current?.showModal();
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = previous; };
+  }, [isOpen]);
+  if (!documents.length) return null;
+  return <section className="planning-documents" aria-labelledby="planning-documents-title">
+    <h2 id="planning-documents-title">기획 문서</h2>
+    <div className="planning-document-list">{documents.map(asset => <button key={asset.path} onClick={() => setSelected(asset)} aria-haspopup="dialog"><span>{asset.name.replace(/\s*·\s*v\d[\s\S]*$/, "")}</span><span className="planning-document-action">문서 보기 <Chevron /></span></button>)}</div>
+    {selected && <dialog ref={dialog} className="planning-document-dialog" aria-labelledby="planning-document-title" onClose={() => setSelected(undefined)} onPointerDown={event => { backdropPressed.current = outsideDialog(event); }} onPointerUp={event => { if (backdropPressed.current && outsideDialog(event)) event.currentTarget.close(); backdropPressed.current = false; }} onPointerCancel={() => { backdropPressed.current = false; }}>
+      <header><h2 id="planning-document-title">{selected.name}</h2><button autoFocus onClick={() => dialog.current?.close()} aria-label="기획 문서 닫기">✕ 닫기</button></header>
+      <div className="planning-document-body"><PdfViewer key={selected.path} title={selected.name} loadingScreen src={preview ? `http://127.0.0.1:4310${selected.path}` : assetUrl(selected.path)} /></div>
+      <nav className="planning-document-switcher" aria-label="기획 문서 이동"><p>기획 문서</p><div>{documents.map(asset => <button key={asset.path} aria-current={asset.path === selected.path ? "true" : undefined} onClick={() => setSelected(asset)}><span>{asset.name}</span><span className="planning-document-action">{asset.path === selected.path ? <strong>현재 보는 문서</strong> : <>문서 보기 <Chevron /></>}</span></button>)}</div></nav>
+    </dialog>}
+  </section>;
 }
 
 export function Portfolio({ snapshot, projectId }: { snapshot: PortfolioSnapshot; projectId?: string }) {
@@ -79,6 +107,7 @@ export function Portfolio({ snapshot, projectId }: { snapshot: PortfolioSnapshot
         {originalPdf(active) && <>
           <div className="pdf-heading"><p className="game-title">{active.title}</p><h1>{active.subtitle || active.title}</h1></div>
           <PdfViewer key={originalPdf(active)!.path} title={active.subtitle || active.title} src={preview ? `http://127.0.0.1:4310${originalPdf(active)!.path}` : assetUrl(originalPdf(active)!.path)} />
+          <PlanningDocuments key={active.id} documents={active.attachments.filter(asset => asset.path.endsWith(".pdf") && asset.path !== originalPdf(active)!.path)} preview={preview} />
         </>}
         {!originalPdf(active) && <>
         <div className="detail-heading"><p className="category">{active.category}</p><h1>{active.title}</h1>{active.subtitle && <p className="subtitle">{active.subtitle}</p>}{active.isExample && <span className="example-label">예시 · 내용 확인 필요</span>}<p className="detail-summary">{active.summary}</p></div>
