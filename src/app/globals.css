@@ -36,6 +36,11 @@ a:focus-visible,button:focus-visible { outline:2px solid var(--accent); outline-
 .intro h1 { font-size:clamp(27px,3.4vw,34px); font-weight:600; line-height:1.45; letter-spacing:-1.2px; margin:0 0 14px; word-break:keep-all; }
 .intro p { color:var(--muted); max-width:660px; font-size:14px; line-height:1.8; margin:0; white-space:pre-wrap; word-break:keep-all; overflow-wrap:anywhere; }
 .intro .author { color:var(--text); font-size:14px; margin-bottom:8px; }
+.intro-contact-row { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px 24px; }
+.intro-contact-row > p { flex:1 1 280px; min-width:0; }
+.intro-email { display:inline-flex; align-items:center; gap:8px; margin-left:auto; color:#41454c; font-size:13px; line-height:1.8; white-space:nowrap; }
+.intro-email svg { width:18px; height:18px; flex-shrink:0; }
+.intro-email:hover { color:#000; text-decoration:underline; text-underline-offset:4px; }
 .section-title { display:flex; align-items:baseline; gap:8px; padding:0 0 16px; border-bottom:1px solid #d8dade; }
 .section-title h2 { font-size:14px; font-weight:600; margin:0; }
 .section-title span { color:var(--muted); font-size:12px; }
