@@ -105,7 +105,7 @@ export function Portfolio({ snapshot, projectId }: { snapshot: PortfolioSnapshot
   }
   return <>
     <a className="skip-link" href="#main">본문으로 이동</a>
-    <header className="site-header-bar" aria-hidden="true"><div className="site-header" /></header>
+    <header className="site-header-bar"><div className="site-header"><span className="site-brand">유해찬의 포트폴리오</span><a className="header-contact" href="mailto:dbgocks99@naver.com"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.5" /><path d="m4 6 8 7 8-7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg><span>dbgocks99@naver.com</span></a></div></header>
     <main id="main" className={`portfolio-main${active ? (originalPdf(active) ? " portfolio-document" : "") : " portfolio-home"}`}>
       {preview && <p className="preview-banner">로컬 미리보기 · 비공개 프로젝트 포함</p>}
       {active ? <>
@@ -133,7 +133,7 @@ export function Portfolio({ snapshot, projectId }: { snapshot: PortfolioSnapshot
           </figure>)}
         </section>}
       </> : <>
-        <section className="intro" aria-labelledby="portfolio-title"><div className="section-inner"><h1 id="portfolio-title">{data.title}</h1>{data.name && <p className="author">{data.name}</p>}<div className="intro-contact-row">{data.introduction && <p>{data.introduction}</p>}<a className="intro-email" href="mailto:dbgocks99@naver.com"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.5" /><path d="m4 6 8 7 8-7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg><span>dbgocks99@naver.com</span></a></div></div></section>
+        <section className="intro" aria-labelledby="portfolio-title"><div className="section-inner"><h1 id="portfolio-title">{data.title}</h1>{data.name && <p className="author">{data.name}</p>}{data.introduction && <p>{data.introduction}</p>}</div></section>
         {collection("portfolio", "포트폴리오")}
         {collection("project", "프로젝트")}
       </>}
