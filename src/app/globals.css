@@ -197,12 +197,12 @@ a:focus-visible,button:focus-visible { outline:2px solid var(--accent); outline-
   .planning-document-action { font-size:11px; }
   .planning-document-switcher { padding:12px 14px; }
   .planning-document-switcher button { gap:12px; padding:10px 8px; }
-  .project-card { align-items:flex-start; flex-wrap:wrap; gap:16px; padding:24px 20px; border-radius:12px; }
-  .project-card-copy { flex-basis:calc(100% - 34px); }
+  .project-card { align-items:center; flex-wrap:nowrap; gap:16px; padding:24px 20px; border-radius:12px; }
+  .project-card-copy { flex-basis:auto; }
   .project-name h3,.project-name h4 { font-size:19px; }
   .card-subtitle { font-size:13px; }
   .card-summary { font-size:12px; }
-  .project-tail { width:100%; margin:0; gap:12px; justify-content:space-between; }
+  .project-tail { width:auto; margin-left:auto; gap:12px; justify-content:flex-end; }
   .project-thumbnail { width:100%; height:180px; }
   .category { font-size:11px; }
   .detail-heading { margin:28px 0; }
