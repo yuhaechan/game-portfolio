@@ -19,6 +19,12 @@ function originalPdf(project: PortfolioProject) {
     : undefined;
 }
 
+function documentStatus(name: string) {
+  if (name.includes("· 현재 적용본")) return "현재 적용본";
+  if (name.includes("· 개선안 (미적용)")) return "개선안 · 미적용";
+  return "";
+}
+
 function PlanningDocuments({ documents, preview }: { documents: PortfolioProject["attachments"]; preview: boolean }) {
   const [selected, setSelected] = useState<PortfolioProject["attachments"][number]>();
   const dialog = useRef<HTMLDialogElement>(null);
@@ -38,7 +44,7 @@ function PlanningDocuments({ documents, preview }: { documents: PortfolioProject
   if (!documents.length) return null;
   return <section className="planning-documents" aria-labelledby="planning-documents-title">
     <h2 id="planning-documents-title">기획 문서</h2>
-    <div className="planning-document-list">{documents.map(asset => <button key={asset.path} onClick={() => setSelected(asset)} aria-haspopup="dialog"><span>{asset.name.replace(/\s*·\s*v\d[\s\S]*$/, "")}</span><span className="planning-document-action">문서 보기 <Chevron /></span></button>)}</div>
+    <div className="planning-document-list">{documents.map(asset => <button key={asset.path} onClick={() => setSelected(asset)} aria-haspopup="dialog"><span className="planning-document-label"><span>{asset.name.replace(/\s*·\s*v\d[\s\S]*$/, "")}</span>{documentStatus(asset.name) && <span className="planning-document-status">{documentStatus(asset.name)}</span>}</span><span className="planning-document-action">문서 보기 <Chevron /></span></button>)}</div>
     {selected && <dialog ref={dialog} className="planning-document-dialog" aria-labelledby="planning-document-title" onClose={() => setSelected(undefined)} onPointerDown={event => { backdropPressed.current = outsideDialog(event); }} onPointerUp={event => { if (backdropPressed.current && outsideDialog(event)) event.currentTarget.close(); backdropPressed.current = false; }} onPointerCancel={() => { backdropPressed.current = false; }}>
       <header><h2 id="planning-document-title">{selected.name}</h2><button autoFocus onClick={() => dialog.current?.close()} aria-label="기획 문서 닫기">✕ 닫기</button></header>
       <div className="planning-document-body"><PdfViewer key={selected.path} title={selected.name} loadingScreen src={preview ? `http://127.0.0.1:4310${selected.path}` : assetUrl(selected.path)} /></div>
