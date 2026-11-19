@@ -25,6 +25,18 @@ function documentStatus(name: string) {
   return "";
 }
 
+function CrimsonPrototype() {
+  const [opened, setOpened] = useState(false);
+  const url = "https://context-input-ui-demo.yuhaechan.chatgpt.site";
+  return <section className="project-reference" aria-labelledby="prototype-reference-title">
+    <h2 id="prototype-reference-title">참고자료</h2>
+    <h3>상황별 조작 안내 프로토타입</h3>
+    <p>캐릭터 상태에 따른 조작 안내와 표시 설정을 직접 확인할 수 있습니다. 키보드와 마우스를 사용하는 PC 환경을 권장합니다.</p>
+    <div className="reference-actions"><button onClick={() => setOpened(value => !value)} aria-expanded={opened} aria-controls="crimson-prototype-frame">{opened ? "체험 화면 접기" : "이 페이지에서 체험하기"}</button><a href={url} target="_blank" rel="noopener noreferrer">새 창에서 열기 ↗</a></div>
+    {opened && <iframe id="crimson-prototype-frame" className="prototype-frame" title="상황별 조작 안내 프로토타입 체험" src={url} allow="fullscreen" allowFullScreen />}
+  </section>;
+}
+
 function PlanningDocuments({ documents, preview }: { documents: PortfolioProject["attachments"]; preview: boolean }) {
   const [selected, setSelected] = useState<PortfolioProject["attachments"][number]>();
   const dialog = useRef<HTMLDialogElement>(null);
@@ -122,6 +134,7 @@ export function Portfolio({ snapshot, projectId }: { snapshot: PortfolioSnapshot
         <div className="detail-content">{sections.filter(([key]) => active[key]).map(([key, title]) => <section key={key}><h2>{title}</h2><p>{String(active[key])}</p></section>)}</div>
         {(active.attachments.length > 0 || active.videos.length > 0) && <section className="attachments"><h2>관련 자료</h2>{active.attachments.map(asset => <a key={asset.path} href={preview ? `http://127.0.0.1:4310${asset.path}` : assetUrl(asset.path)} target="_blank" rel="noopener noreferrer">{asset.name}<span>{asset.path.endsWith(".pdf") ? "PDF 열기 ↗" : "이미지 보기 ↗"}</span></a>)}{active.videos.map(video => <a key={video.url} href={video.url} target="_blank" rel="noopener noreferrer">{video.name}<span>영상 보기 ↗</span></a>)}</section>}
         </>}
+        {active.id === "crimson-desert" && <CrimsonPrototype />}
         {active.videos.some(video => videoAssetPattern.test(video.url)) && <section className="project-videos" aria-labelledby="project-videos-title">
           <h2 id="project-videos-title">참고자료</h2>
           {active.videos.filter(video => videoAssetPattern.test(video.url)).map(video => <figure key={video.url}>
