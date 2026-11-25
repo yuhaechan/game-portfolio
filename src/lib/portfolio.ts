@@ -1,10 +1,11 @@
 export interface PortfolioProject {
   id: string;
-  section: "portfolio" | "project";
+  section: "portfolio" | "planning" | "project";
   kind: "game" | "app";
   title: string;
   subtitle: string;
   category: string;
+  authoredOn: string;
   summary: string;
   role: string;
   tools: string;
@@ -57,10 +58,17 @@ export function validateSnapshot(value: unknown): PortfolioSnapshot {
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id) || ids.has(id)) throw new Error("프로젝트 주소는 중복 없는 영문 소문자·숫자·하이픈으로 입력하세요.");
     ids.add(id);
     const section = raw.section ?? "portfolio";
-    if (section !== "portfolio" && section !== "project") throw new Error("포트폴리오 또는 프로젝트 영역을 선택하세요.");
+    if (section !== "portfolio" && section !== "planning" && section !== "project") throw new Error("포트폴리오, 기획서 또는 프로젝트 영역을 선택하세요.");
     const kind = raw.kind ?? "game";
     if (kind !== "game" && kind !== "app") throw new Error("게임 또는 앱·서비스 분류를 선택하세요.");
     const fields = Object.fromEntries(projectTextFields.map(key => [key, text(raw[key], ["title", "category"].includes(key) ? 150 : 20000)])) as Pick<PortfolioProject, typeof projectTextFields[number]>;
+    const authoredOn = text(raw.authoredOn ?? "", 10);
+    if (authoredOn) {
+      const date = new Date(authoredOn);
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(authoredOn) || Number.isNaN(date.getTime()) || date.toISOString().slice(0, 10) !== authoredOn) {
+        throw new Error("작성일을 올바른 연월일로 입력하세요.");
+      }
+    }
     if (!fields.title) throw new Error("프로젝트 제목을 입력하세요.");
     if (raw.visibility !== "public" && raw.visibility !== "private") throw new Error("공개 여부가 올바르지 않습니다.");
     if (typeof raw.isExample !== "boolean") throw new Error("예시 표시 설정을 확인하세요.");
@@ -80,7 +88,7 @@ export function validateSnapshot(value: unknown): PortfolioSnapshot {
       if (parsed.protocol !== "https:" || parsed.username || parsed.password || !["youtube.com", "www.youtube.com", "youtu.be", "vimeo.com", "www.vimeo.com"].includes(parsed.hostname) || !name) throw new Error("영상은 업로드한 MP4 또는 YouTube·Vimeo의 HTTPS 주소를 사용하세요.");
       return { name, url };
     });
-    return { id, section, kind, ...fields, visibility: raw.visibility, isExample: raw.isExample, cover, attachments, videos };
+    return { id, section, kind, ...fields, authoredOn, visibility: raw.visibility, isExample: raw.isExample, cover, attachments, videos };
   });
   if (!Number.isSafeInteger(data.revision) || (data.revision as number) < 0) throw new Error("저장 버전을 확인하세요.");
   const publishedAt = data.publishedAt === null ? null : text(data.publishedAt, 40);

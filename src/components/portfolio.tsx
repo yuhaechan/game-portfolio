@@ -9,6 +9,16 @@ const PdfViewer = dynamic(() => import("./pdf-viewer"), { ssr: false, loading: (
 
 const sections: [keyof PortfolioProject, string][] = [["overview", "프로젝트 개요"], ["purpose", "기획 목적"], ["problem", "문제 정의"], ["analysis", "분석"], ["solution", "설계와 해결 방안"], ["validation", "검증 결과"]];
 
+const homeCollections = [
+  { section: "portfolio", anchor: "portfolio", label: "포트폴리오" },
+  { section: "planning", anchor: "planning", label: "기획서" },
+  { section: "project", anchor: "projects", label: "프로젝트" },
+] as const;
+
+function categoryNames(category: string) {
+  return category.split(",").map(name => name.trim()).filter(Boolean);
+}
+
 function Chevron() {
   return <svg className="card-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m8 5 5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>;
 }
@@ -65,10 +75,82 @@ function PlanningDocuments({ documents, preview }: { documents: PortfolioProject
   </section>;
 }
 
+function PlanningFilter({ categories, selectedCategory, newestFirst, onCategoryChange, onOrderChange }: {
+  categories: string[];
+  selectedCategory: string;
+  newestFirst: boolean;
+  onCategoryChange: (category: string) => void;
+  onOrderChange: (newestFirst: boolean) => void;
+}) {
+  const [panel, setPanel] = useState<"category" | "order">("category");
+  const [open, setOpen] = useState(false);
+  const [availableHeight, setAvailableHeight] = useState<number>();
+  const controls = useRef<HTMLDivElement>(null);
+  const trigger = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    function closeOutside(event: PointerEvent) {
+      if (event.target instanceof Node && !controls.current?.contains(event.target)) setOpen(false);
+    }
+    function closeOnEscape(event: KeyboardEvent) {
+      if (event.key !== "Escape") return;
+      setOpen(false);
+      trigger.current?.focus();
+    }
+    function measureSpace() {
+      if (controls.current) {
+        setAvailableHeight(Math.max(0, controls.current.getBoundingClientRect().bottom - 8));
+      }
+    }
+    measureSpace();
+    window.addEventListener("resize", measureSpace);
+    window.addEventListener("scroll", measureSpace, { passive: true });
+    document.addEventListener("pointerdown", closeOutside);
+    document.addEventListener("keydown", closeOnEscape);
+    return () => {
+      window.removeEventListener("resize", measureSpace);
+      window.removeEventListener("scroll", measureSpace);
+      document.removeEventListener("pointerdown", closeOutside);
+      document.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [open]);
+
+  return <div className="collection-controls" ref={controls}>
+    <button type="button" className="filter-trigger" ref={trigger} aria-expanded={open} data-filter-active={Boolean(selectedCategory)} aria-controls="planning-filter" aria-label={selectedCategory ? `기획서 필터 · ${selectedCategory}` : "기획서 필터"} onClick={() => setOpen(!open)}>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M4 6h16M7 12h10m-7 6h4" />
+      </svg>
+    </button>
+    <div id="planning-filter" className="filter-popover" style={{ maxHeight: availableHeight }} hidden={!open} role="group" aria-label="기획서 필터 및 정렬">
+      <div className="filter-tabs" role="group" aria-label="설정 선택">
+        <button type="button" aria-pressed={panel === "category"} onClick={() => setPanel("category")}>항목</button>
+        <button type="button" aria-pressed={panel === "order"} onClick={() => setPanel("order")}>정렬</button>
+      </div>
+      {panel === "category" ? (
+        <div className="filter-options" role="group" aria-label="기획서 항목">
+          {["", ...categories].map(category => (
+            <button type="button" key={category} aria-pressed={category === selectedCategory} onClick={() => onCategoryChange(category)}>
+              {category || "전체"}
+            </button>
+          ))}
+        </div>
+      ) : (
+        <div className="filter-options" role="group" aria-label="최초 작성일 기준 정렬">
+          <button type="button" aria-pressed={!newestFirst} onClick={() => onOrderChange(false)}>오름차순</button>
+          <button type="button" aria-pressed={newestFirst} onClick={() => onOrderChange(true)}>내림차순</button>
+        </div>
+      )}
+    </div>
+  </div>;
+}
+
 export function Portfolio({ snapshot, projectId }: { snapshot: PortfolioSnapshot; projectId?: string }) {
   const [data, setData] = useState(snapshot);
   const [selection, setSelection] = useState(projectId);
   const [preview, setPreview] = useState(false);
+  const [planningCategory, setPlanningCategory] = useState("");
+  const [newestFirst, setNewestFirst] = useState(true);
   useEffect(() => {
     if (!["127.0.0.1", "localhost"].includes(location.hostname) || !new URLSearchParams(location.search).has("preview")) return;
     setPreview(true);
@@ -82,73 +164,128 @@ export function Portfolio({ snapshot, projectId }: { snapshot: PortfolioSnapshot
     return () => window.removeEventListener("message", receive);
   }, []);
   const projects = data.projects;
+  const planningCategories = [...new Set(projects.filter(project => project.section === "planning").flatMap(project => categoryNames(project.category)))];
+  const selectedCategory = planningCategories.includes(planningCategory) ? planningCategory : "";
   const active = projects.find(project => project.id === selection);
   function navigate(event: React.MouseEvent, id?: string) {
     if (!preview) return;
     event.preventDefault(); setSelection(id); window.scrollTo(0, 0);
   }
-  function collection(section: PortfolioProject["section"], title: string) {
-    const entries = projects.filter(project => project.section === section);
-    const anchor = section === "portfolio" ? "portfolio" : "projects";
-    const CardTitle = section === "portfolio" ? "h4" : "h3";
-    function cards(items: PortfolioProject[]) {
-      return <div className="project-list">{items.map(project => {
-          return (
-          <Link className="project-card" key={project.id} href={`/projects/${project.id}/`} onClick={event => navigate(event, project.id)}>
-            <div className="project-card-copy">
-              <div className="project-name"><CardTitle>{project.subtitle ? <><span className="game-title">{project.title}</span><span className="work-title">{project.subtitle}</span></> : <span className="work-title">{project.title}</span>}</CardTitle>{project.isExample && <span className="example-label">예시</span>}</div>
-              {project.summary && <p className="card-summary">{project.summary}</p>}
-            </div>
-            {project.cover && <img src={preview ? `http://127.0.0.1:4310${project.cover}` : assetUrl(project.cover)} alt="" className="project-thumbnail" loading="lazy" />}
-            <div className="project-tail">{project.category && <span className="category">{project.category}</span>}<Chevron /></div>
-          </Link>
-        );})}</div>;
-    }
-    return (
-      <section id={anchor} className="projects-section work-section" aria-labelledby={`${anchor}-list-title`}>
-        <div className="section-title"><h2 id={`${anchor}-list-title`}>{title}</h2><span>{entries.length}개</span></div>
-        {section === "portfolio" ? ([['game', '게임 기획'], ['app', '앱·서비스']] as const).map(([kind, label]) => {
-          const items = entries.filter(project => (project.kind || "game") === kind);
-          return items.length > 0 && <div className="portfolio-group" key={kind}><div className="portfolio-group-title"><h3>{label}</h3><span>{items.length}개</span></div>{cards(items)}</div>;
-        }) : cards(entries)}
-        {!entries.length && <p className="empty-state">등록된 {title === "포트폴리오" ? "포트폴리오가" : "프로젝트가"} 없습니다.</p>}
-      </section>
-    );
-  }
   return <>
     <a className="skip-link" href="#main">본문으로 이동</a>
-    <header className="site-header-bar"><div className="site-header"><span className="site-brand">유해찬의 포트폴리오</span><a className="header-contact" href="mailto:dbgocks99@naver.com"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.5" /><path d="m4 6 8 7 8-7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg><span>dbgocks99@naver.com</span></a></div></header>
-    <main id="main" className={`portfolio-main${active ? (originalPdf(active) ? " portfolio-document" : "") : " portfolio-home"}`}>
+    <header className="site-header-bar"><div className="site-header"><Link className="site-brand" href="/" onClick={event => navigate(event)}>유해찬의 포트폴리오</Link><a className="header-contact" href="mailto:dbgocks99@naver.com"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.5" /><path d="m4 6 8 7 8-7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg><span>dbgocks99@naver.com</span></a></div></header>
+    <main id="main" className={`portfolio-main${active ? ` portfolio-detail${originalPdf(active) ? " portfolio-document" : ""}` : " portfolio-home"}`}>
       {preview && <p className="preview-banner">로컬 미리보기 · 비공개 프로젝트 포함</p>}
-      {active ? <>
-        <nav className="detail-nav" aria-label="목록으로 돌아가기"><Link className="detail-back" href={active.section === "portfolio" ? "/#portfolio" : "/#projects"} onClick={event => navigate(event)}><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m12 5-7 7 7 7M5 12h14" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg><span>{active.section === "portfolio" ? "포트폴리오" : "프로젝트"} 목록으로</span></Link></nav>
-        {originalPdf(active) && <>
-          <div className="pdf-heading"><p className="game-title">{active.title}</p><h1>{active.subtitle || active.title}</h1></div>
-          <PdfViewer key={originalPdf(active)!.path} title={active.subtitle || active.title} src={preview ? `http://127.0.0.1:4310${originalPdf(active)!.path}` : assetUrl(originalPdf(active)!.path)} />
-          <PlanningDocuments key={active.id} documents={active.attachments.filter(asset => asset.path.endsWith(".pdf") && asset.path !== originalPdf(active)!.path)} preview={preview} />
-        </>}
-        {!originalPdf(active) && <>
-        <div className="detail-heading"><p className="category">{active.category}</p><h1>{active.title}</h1>{active.subtitle && <p className="subtitle">{active.subtitle}</p>}{active.isExample && <span className="example-label">예시 · 내용 확인 필요</span>}<p className="detail-summary">{active.summary}</p></div>
-        {[active.role, active.period, active.tools].some(Boolean) && <dl className="project-meta">{[["담당 역할", active.role], ["기간", active.period], ["도구", active.tools]].filter(([, value]) => value).map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>}
-        {active.cover && <img className="detail-cover" src={preview ? `http://127.0.0.1:4310${active.cover}` : assetUrl(active.cover)} alt={`${active.title} 대표 이미지`} />}
-        <div className="detail-content">{sections.filter(([key]) => active[key]).map(([key, title]) => <section key={key}><h2>{title}</h2><p>{String(active[key])}</p></section>)}</div>
-        {(active.attachments.length > 0 || active.videos.length > 0) && <section className="attachments"><h2>관련 자료</h2>{active.attachments.map(asset => <a key={asset.path} href={preview ? `http://127.0.0.1:4310${asset.path}` : assetUrl(asset.path)} target="_blank" rel="noopener noreferrer">{asset.name}<span>{asset.path.endsWith(".pdf") ? "PDF 열기 ↗" : "이미지 보기 ↗"}</span></a>)}{active.videos.map(video => <a key={video.url} href={video.url} target="_blank" rel="noopener noreferrer">{video.name}<span>영상 보기 ↗</span></a>)}</section>}
-        </>}
-        {active.id === "crimson-desert" && <CrimsonPrototype />}
-        {active.videos.some(video => videoAssetPattern.test(video.url)) && <section className="project-videos" aria-labelledby="project-videos-title">
-          <h2 id="project-videos-title">참고자료</h2>
-          {active.videos.filter(video => videoAssetPattern.test(video.url)).map(video => <figure key={video.url}>
-            <figcaption>{video.name}</figcaption>
-            <video controls playsInline preload="metadata" controlsList="nodownload" aria-label={video.name}>
-              <source src={preview ? `http://127.0.0.1:4310${video.url}` : assetUrl(video.url)} type="video/mp4" />
-              이 브라우저에서는 영상을 재생할 수 없습니다.
-            </video>
-          </figure>)}
-        </section>}
-      </> : <>
-        <section className="intro" aria-labelledby="portfolio-title"><div className="section-inner"><h1 id="portfolio-title">{data.title}</h1>{data.name && <p className="author">{data.name}</p>}{data.introduction && <p>{data.introduction}</p>}</div></section>
-        {collection("portfolio", "포트폴리오")}
-        {collection("project", "프로젝트")}
+      {active ? <div className="detail-layout">
+        <nav className="detail-nav" aria-label="작업 문서 목록">
+          <Link className="detail-back" href={`/#${homeCollections.find(collection => collection.section === active.section)?.anchor ?? "portfolio"}`} onClick={event => navigate(event)}>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m12 5-7 7 7 7M5 12h14" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            작업 목록으로
+          </Link>
+          {homeCollections.map(({ section, label }) => {
+            const entries = projects.filter(project => project.section === section);
+            if (!entries.length) return null;
+            return <div className="detail-nav-group" key={section}>
+              <h2>{label}</h2>
+              <ul>{entries.map(project => (
+                <li key={project.id}>
+                  <Link href={`/projects/${project.id}/`} aria-current={project.id === active.id ? "page" : undefined} onClick={event => navigate(event, project.id)}>
+                    <span>{project.title}</span>
+                    {project.subtitle && <span className="detail-nav-subtitle">{project.subtitle}</span>}
+                  </Link>
+                </li>
+              ))}</ul>
+            </div>;
+          })}
+        </nav>
+        <article className="detail-body">
+          {originalPdf(active) && <>
+            <div className="pdf-heading"><p className="game-title">{active.title}</p><h1>{active.subtitle || active.title}</h1></div>
+            <PdfViewer key={originalPdf(active)!.path} title={active.subtitle || active.title} src={preview ? `http://127.0.0.1:4310${originalPdf(active)!.path}` : assetUrl(originalPdf(active)!.path)} />
+            <PlanningDocuments key={active.id} documents={active.attachments.filter(asset => asset.path.endsWith(".pdf") && asset.path !== originalPdf(active)!.path)} preview={preview} />
+          </>}
+          {!originalPdf(active) && <>
+          <div className="detail-heading"><p className="category">{categoryNames(active.category).join(" · ")}</p><h1>{active.title}</h1>{active.subtitle && <p className="subtitle">{active.subtitle}</p>}{active.isExample && <span className="example-label">예시 · 내용 확인 필요</span>}<p className="detail-summary">{active.summary}</p></div>
+          {[active.role, active.period, active.tools].some(Boolean) && <dl className="project-meta">{[["담당 역할", active.role], ["기간", active.period], ["도구", active.tools]].filter(([, value]) => value).map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>}
+          {active.cover && <img className="detail-cover" src={preview ? `http://127.0.0.1:4310${active.cover}` : assetUrl(active.cover)} alt={`${active.title} 대표 이미지`} />}
+          <div className="detail-content">{sections.filter(([key]) => active[key]).map(([key, title]) => <section key={key}><h2>{title}</h2><p>{String(active[key])}</p></section>)}</div>
+          {(active.attachments.length > 0 || active.videos.length > 0) && <section className="attachments"><h2>관련 자료</h2>{active.attachments.map(asset => <a key={asset.path} href={preview ? `http://127.0.0.1:4310${asset.path}` : assetUrl(asset.path)} target="_blank" rel="noopener noreferrer">{asset.name}<span>{asset.path.endsWith(".pdf") ? "PDF 열기 ↗" : "이미지 보기 ↗"}</span></a>)}{active.videos.map(video => <a key={video.url} href={video.url} target="_blank" rel="noopener noreferrer">{video.name}<span>영상 보기 ↗</span></a>)}</section>}
+          </>}
+          {active.id === "crimson-desert" && <CrimsonPrototype />}
+          {active.videos.some(video => videoAssetPattern.test(video.url)) && <section className="project-videos" aria-labelledby="project-videos-title">
+            <h2 id="project-videos-title">참고자료</h2>
+            {active.videos.filter(video => videoAssetPattern.test(video.url)).map(video => <figure key={video.url}>
+              <figcaption>{video.name}</figcaption>
+              <video controls playsInline preload="metadata" controlsList="nodownload" aria-label={video.name}>
+                <source src={preview ? `http://127.0.0.1:4310${video.url}` : assetUrl(video.url)} type="video/mp4" />
+                이 브라우저에서는 영상을 재생할 수 없습니다.
+              </video>
+            </figure>)}
+          </section>}
+        </article>
+      </div> : <>
+        <h1 className="sr-only">{data.title}</h1>
+        <div className="home-layout">
+          <div className="home-collections">
+            {homeCollections.map(({ section, anchor, label }) => {
+              const entries = projects.filter(project => project.section === section);
+              if (!entries.length) return null;
+              const visibleEntries = section === "planning"
+                ? entries.filter(project => !selectedCategory || categoryNames(project.category).includes(selectedCategory))
+                : entries;
+              if (section === "planning") {
+                visibleEntries.sort((first, second) => {
+                  if (!first.authoredOn || !second.authoredOn) return Number(Boolean(second.authoredOn)) - Number(Boolean(first.authoredOn));
+                  return newestFirst
+                    ? second.authoredOn.localeCompare(first.authoredOn)
+                    : first.authoredOn.localeCompare(second.authoredOn);
+                });
+              }
+              return <section key={section} id={anchor} aria-labelledby={`${anchor}-heading`}>
+                <div className="collection-header">
+                  <h2 id={`${anchor}-heading`} className="collection-heading">{label}</h2>
+                  {section === "planning" && <PlanningFilter
+                    categories={planningCategories}
+                    selectedCategory={selectedCategory}
+                    newestFirst={newestFirst}
+                    onCategoryChange={setPlanningCategory}
+                    onOrderChange={setNewestFirst}
+                  />}
+                </div>
+                <div className="project-list">
+                  {visibleEntries.map(project => (
+                    <Link className="project-card" key={project.id} href={`/projects/${project.id}/`} onClick={event => navigate(event, project.id)}>
+                      <div className="project-card-cover">
+                        {project.cover ? (
+                          <img src={preview ? `http://127.0.0.1:4310${project.cover}` : assetUrl(project.cover)} alt="" className="project-thumbnail" loading="lazy" />
+                        ) : (
+                          <span className="project-cover-placeholder" aria-hidden="true">{project.title}</span>
+                        )}
+                      </div>
+                      <div className="project-card-copy">
+                        <h3>
+                          {project.subtitle && <span className="game-title">{project.title}</span>}
+                          <span className="work-title">{project.subtitle || project.title}</span>
+                        </h3>
+                        {project.category && <span className="category">{categoryNames(project.category).join(" · ")}</span>}
+                        <p className="card-date">
+                          작성일 {project.authoredOn ? <time dateTime={project.authoredOn}>{project.authoredOn.replaceAll("-", ".")}</time> : "미확인"}
+                        </p>
+                        {project.isExample && <span className="example-label">예시</span>}
+                        {project.summary && <p className="card-summary">{project.summary}</p>}
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </section>;
+            })}
+            {!projects.length && <p className="empty-state">등록된 작업이 없습니다.</p>}
+          </div>
+          <aside className="play-history" aria-labelledby="play-history-heading">
+            <h2 id="play-history-heading" className="collection-heading">게임 플레이 이력</h2>
+            <p className="play-history-empty">등록된 플레이 이력이 없습니다.</p>
+          </aside>
+        </div>
       </>}
     </main>
   </>;

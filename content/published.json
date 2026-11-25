@@ -7,11 +7,11 @@
   "projects": [
     {
       "id": "mabinogi-mobile",
-      "section": "portfolio",
+      "section": "planning",
       "kind": "game",
       "title": "모바일 마비노기",
       "subtitle": "가공 시스템 개선 제안서",
-      "category": "",
+      "category": "시스템",
       "summary": "",
       "role": "",
       "tools": "",
@@ -22,9 +22,10 @@
       "analysis": "",
       "solution": "",
       "validation": "",
+      "authoredOn": "2026-11-11",
       "visibility": "public",
       "isExample": false,
-      "cover": "",
+      "cover": "/media/f7d8606f-d00a-5753-b66e-d3f33e42b272.webp",
       "attachments": [
         {
           "name": "가공 시스템 개선 제안서 · 전체 PDF",
@@ -35,11 +36,11 @@
     },
     {
       "id": "crimson-desert",
-      "section": "portfolio",
+      "section": "planning",
       "kind": "game",
       "title": "붉은사막",
       "subtitle": "상황별 조작 안내 UI",
-      "category": "",
+      "category": "시스템, UI/UX",
       "summary": "",
       "role": "",
       "tools": "",
@@ -50,9 +51,10 @@
       "analysis": "",
       "solution": "",
       "validation": "",
+      "authoredOn": "2026-11-04",
       "visibility": "public",
       "isExample": false,
-      "cover": "",
+      "cover": "/media/ee9e0efb-a976-5007-99e3-d9df4a80f7da.webp",
       "attachments": [
         {
           "name": "상황별 조작 안내 포트폴리오 · 전체 PDF (11쪽)",
@@ -78,9 +80,10 @@
       "analysis": "",
       "solution": "",
       "validation": "",
+      "authoredOn": "2026-11-12",
       "visibility": "public",
       "isExample": false,
-      "cover": "",
+      "cover": "/media/3b3d64aa-baa7-5990-9c58-d90a7c34dcc8.webp",
       "attachments": [
         {
           "name": "매장 도우미 포트폴리오 · 전체 PDF (17쪽)",
@@ -111,9 +114,10 @@
       "analysis": "",
       "solution": "",
       "validation": "",
+      "authoredOn": "2026-11-17",
       "visibility": "public",
       "isExample": false,
-      "cover": "",
+      "cover": "/media/da7837b2-af0e-53eb-ba29-5aeb2cd34274.webp",
       "attachments": [
         {
           "name": "For.EST UI 기획 포트폴리오 · 전체 PDF (11쪽)",
