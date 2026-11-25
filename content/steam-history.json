@@ -1,0 +1,1445 @@
+{
+  "updatedAt": "2026-11-25T12:35:53.717Z",
+  "games": [
+    {
+      "appId": 578080,
+      "name": "PUBG: BATTLEGROUNDS",
+      "playtimeMinutes": 63772,
+      "iconHash": "609f27278aa70697c13bf99f32c5a0248c381f9d",
+      "genres": [
+        "액션",
+        "어드벤처",
+        "대규모 멀티플레이어"
+      ],
+      "iconPath": "/steam-icons/578080-609f27278aa70697c13bf99f32c5a0248c381f9d.jpg"
+    },
+    {
+      "appId": 1313860,
+      "name": "EA SPORTS™ FIFA 21",
+      "playtimeMinutes": 24857,
+      "iconHash": "6f8d384b395d64b39f6f0f6569a393fc856ce263",
+      "genres": [
+        "시뮬레이션",
+        "스포츠"
+      ],
+      "iconPath": "/steam-icons/1313860-6f8d384b395d64b39f6f0f6569a393fc856ce263.jpg"
+    },
+    {
+      "appId": 1172470,
+      "name": "Apex Legends",
+      "playtimeMinutes": 21774,
+      "iconHash": "8986dd626da56db5f3fe09bc1b8871739de8b00d",
+      "genres": [
+        "액션",
+        "어드벤처"
+      ],
+      "iconPath": "/steam-icons/1172470-8986dd626da56db5f3fe09bc1b8871739de8b00d.jpg"
+    },
+    {
+      "appId": 962130,
+      "name": "Grounded",
+      "playtimeMinutes": 16336,
+      "iconHash": "0e598fd0dc10e3d85e5f244c62d0c41e4c8d96cc",
+      "genres": [
+        "액션",
+        "어드벤처"
+      ],
+      "iconPath": "/steam-icons/962130-0e598fd0dc10e3d85e5f244c62d0c41e4c8d96cc.jpg"
+    },
+    {
+      "appId": 230410,
+      "name": "Warframe",
+      "playtimeMinutes": 14061,
+      "iconHash": "22064646470f4c53388ba87774c7ac10f0a91ffa",
+      "genres": [
+        "액션",
+        "RPG"
+      ],
+      "iconPath": "/steam-icons/230410-22064646470f4c53388ba87774c7ac10f0a91ffa.jpg"
+    },
+    {
+      "appId": 359550,
+      "name": "Tom Clancy's Rainbow Six Siege",
+      "playtimeMinutes": 9063,
+      "iconHash": "624745d333ac54aedb1ee911013e2edb7722550e",
+      "genres": [
+        "액션"
+      ],
+      "iconPath": "/steam-icons/359550-624745d333ac54aedb1ee911013e2edb7722550e.jpg"
+    },
+    {
+      "appId": 582010,
+      "name": "Monster Hunter: World",
+      "playtimeMinutes": 8633,
+      "iconHash": "6ec147f2d423f435e15eb79b3d82f771913de634",
+      "genres": [
+        "액션"
+      ],
+      "iconPath": "/steam-icons/582010-6ec147f2d423f435e15eb79b3d82f771913de634.jpg"
+    },
+    {
+      "appId": 397540,
+      "name": "Borderlands 3",
+      "playtimeMinutes": 7571,
+      "iconHash": "0ac7b8d98fad581f65b0533bbce63bf953d743ac",
+      "genres": [
+        "액션",
+        "RPG"
+      ],
+      "iconPath": "/steam-icons/397540-0ac7b8d98fad581f65b0533bbce63bf953d743ac.jpg"
+    },
+    {
+      "appId": 460930,
+      "name": "Tom Clancy's Ghost Recon® Wildlands",
+      "playtimeMinutes": 6276,
+      "iconHash": "ddd459159befc6a8cd6c4cb0e2a13c2fd2f8b065",
+      "genres": [
+        "액션",
+        "어드벤처"
+      ],
+      "iconPath": "/steam-icons/460930-ddd459159befc6a8cd6c4cb0e2a13c2fd2f8b065.jpg"
+    },
+    {
+      "appId": 1623730,
+      "name": "Palworld",
+      "playtimeMinutes": 6147,
+      "iconHash": "f5523077a8f4c923c2e8d8c17794b3319035fa73",
+      "genres": [
+        "액션",
+        "어드벤처",
+        "인디",
+        "RPG"
+      ],
+      "iconPath": "/steam-icons/1623730-f5523077a8f4c923c2e8d8c17794b3319035fa73.jpg"
+    },
+    {
+      "appId": 2507950,
+      "name": "Delta Force",
+      "playtimeMinutes": 6023,
+      "iconHash": "52bc6c4bf0c232cf30d66eb3d1638bf099bc6061",
+      "genres": [
+        "액션",
+        "어드벤처",
+        "대규모 멀티플레이어"
+      ],
+      "iconPath": "/steam-icons/2507950-52bc6c4bf0c232cf30d66eb3d1638bf099bc6061.jpg"
+    },
+    {
+      "appId": 3321460,
+      "name": "Crimson Desert Enhanced",
+      "playtimeMinutes": 5705,
+      "iconHash": "f260267377759a5fea6b651817c9a413c6b562b0",
+      "genres": [
+        "액션",
+        "어드벤처"
+      ],
+      "iconPath": "/steam-icons/3321460-f260267377759a5fea6b651817c9a413c6b562b0.jpg"
+    },
+    {
+      "appId": 570,
+      "name": "Dota 2",
+      "playtimeMinutes": 5639,
+      "iconHash": "48eb825bb93787945065b460bdc109e395384ebf",
+      "genres": [
+        "액션",
+        "전략"
+      ]
+    },
+    {
+      "appId": 2246340,
+      "name": "Monster Hunter Wilds",
+      "playtimeMinutes": 5456,
+      "iconHash": "23474d61e4506351f9b26f230fd417d017cf2806",
+      "genres": [
+        "액션",
+        "어드벤처",
+        "RPG"
+      ],
+      "iconPath": "/steam-icons/2246340-23474d61e4506351f9b26f230fd417d017cf2806.jpg"
+    },
+    {
+      "appId": 218620,
+      "name": "PAYDAY 2",
+      "playtimeMinutes": 5205,
+      "iconHash": "8fce45cbb0dee03e87cd30b96ac5e5c3d4b2c494",
+      "genres": [
+        "액션",
+        "RPG"
+      ]
+    },
+    {
+      "appId": 2666510,
+      "name": "Rusty's Retirement",
+      "playtimeMinutes": 5071,
+      "iconHash": "72be5b22943d8874a18c9de214f1d5fa82d98310",
+      "genres": [
+        "캐주얼",
+        "인디",
+        "시뮬레이션",
+        "전략"
+      ],
+      "iconPath": "/steam-icons/2666510-72be5b22943d8874a18c9de214f1d5fa82d98310.jpg"
+    },
+    {
+      "appId": 2074920,
+      "name": "The First Descendant",
+      "playtimeMinutes": 4935,
+      "iconHash": "a07ab51050a8e03993b1860ae929da51287f283b",
+      "genres": [
+        "액션",
+        "어드벤처",
+        "RPG"
+      ],
+      "iconPath": "/steam-icons/2074920-a07ab51050a8e03993b1860ae929da51287f283b.jpg"
+    },
+    {
+      "appId": 1049590,
+      "name": "Eternal Return",
+      "playtimeMinutes": 4610,
+      "iconHash": "1d458721c8c4993c111038f72b07b42b66fc4efe",
+      "genres": [],
+      "iconPath": "/steam-icons/1049590-1d458721c8c4993c111038f72b07b42b66fc4efe.jpg"
+    },
+    {
+      "appId": 3609080,
+      "name": "StarSavior",
+      "playtimeMinutes": 4214,
+      "iconHash": "cd9165a2a25e274827b58a5d56313809213668dd",
+      "genres": [
+        "RPG",
+        "시뮬레이션",
+        "전략"
+      ]
+    },
+    {
+      "appId": 1259420,
+      "name": "Days Gone",
+      "playtimeMinutes": 4124,
+      "iconHash": "839338fcedd1033ab7f0d2a31c194fb880ebf7b5",
+      "genres": [
+        "액션",
+        "어드벤처"
+      ],
+      "iconPath": "/steam-icons/1259420-839338fcedd1033ab7f0d2a31c194fb880ebf7b5.jpg"
+    },
+    {
+      "appId": 1326470,
+      "name": "Sons Of The Forest",
+      "playtimeMinutes": 4100,
+      "iconHash": "bd28fe592b339cff5a3eef743f31e3166c984c68",
+      "genres": [
+        "액션",
+        "어드벤처",
+        "인디",
+        "시뮬레이션"
+      ],
+      "iconPath": "/steam-icons/1326470-bd28fe592b339cff5a3eef743f31e3166c984c68.jpg"
+    },
+    {
+      "appId": 4025700,
+      "name": "Heartopia",
+      "playtimeMinutes": 3559,
+      "iconHash": "6784899cc6c7b17f7f5b47723acabc0e46126a12",
+      "genres": [
+        "캐주얼",
+        "시뮬레이션"
+      ],
+      "iconPath": "/steam-icons/4025700-6784899cc6c7b17f7f5b47723acabc0e46126a12.jpg"
+    },
+    {
+      "appId": 3308670,
+      "name": "GIRLS' FRONTLINE 2: EXILIUM",
+      "playtimeMinutes": 3477,
+      "iconHash": "ff69d8a226d43a7506be57c24581b9a9c0164880",
+      "genres": [
+        "RPG",
+        "전략"
+      ],
+      "iconPath": "/steam-icons/3308670-ff69d8a226d43a7506be57c24581b9a9c0164880.jpg"
+    },
+    {
+      "appId": 271590,
+      "name": "Grand Theft Auto V Legacy",
+      "playtimeMinutes": 3463,
+      "iconHash": "1e72f87eb927fa1485e68aefaff23c7fd7178251",
+      "genres": [
+        "액션",
+        "어드벤처"
+      ],
+      "iconPath": "/steam-icons/271590-1e72f87eb927fa1485e68aefaff23c7fd7178251.jpg"
+    },
+    {
+      "appId": 3167020,
+      "name": "Escape From Duckov",
+      "playtimeMinutes": 3426,
+      "iconHash": "5bb8d31708442a8f3ddbc100d7be7c3fde530d18",
+      "genres": [
+        "액션",
+        "어드벤처",
+        "인디",
+        "RPG"
+      ],
+      "iconPath": "/steam-icons/3167020-5bb8d31708442a8f3ddbc100d7be7c3fde530d18.jpg"
+    },
+    {
+      "appId": 553850,
+      "name": "HELLDIVERS™ 2",
+      "playtimeMinutes": 3277,
+      "iconHash": "5236dcc5d02b1f7aa199eef56253d20be87baef3",
+      "genres": [
+        "액션"
+      ]
+    },
+    {
+      "appId": 1522820,
+      "name": "Orcs Must Die! 3",
+      "playtimeMinutes": 3003,
+      "iconHash": "e637d019db32c830fe82c663644f8d3a46072c15",
+      "genres": [
+        "액션",
+        "어드벤처",
+        "인디",
+        "전략"
+      ],
+      "iconPath": "/steam-icons/1522820-e637d019db32c830fe82c663644f8d3a46072c15.jpg"
+    },
+    {
+      "appId": 1551360,
+      "name": "Forza Horizon 5",
+      "playtimeMinutes": 2989,
+      "iconHash": "6c1d20c62c4613263548323052c62cece488876b",
+      "genres": [
+        "액션",
+        "어드벤처",
+        "레이싱",
+        "시뮬레이션",
+        "스포츠"
+      ],
+      "iconPath": "/steam-icons/1551360-6c1d20c62c4613263548323052c62cece488876b.jpg"
+    },
+    {
+      "appId": 232090,
+      "name": "Killing Floor 2",
+      "playtimeMinutes": 2869,
+      "iconHash": "15837cefb378766e9916548f8591b6eb490b9e52",
+      "genres": [
+        "액션"
+      ],
+      "iconPath": "/steam-icons/232090-15837cefb378766e9916548f8591b6eb490b9e52.jpg"
+    },
+    {
+      "appId": 548430,
+      "name": "Deep Rock Galactic",
+      "playtimeMinutes": 2841,
+      "iconHash": "e033e23c29a192a17c16a7645a2b423ac64ff447",
+      "genres": [
+        "액션"
+      ],
+      "iconPath": "/steam-icons/548430-e033e23c29a192a17c16a7645a2b423ac64ff447.jpg"
+    },
+    {
+      "appId": 3511030,
+      "name": "Mini Cozy Room: Lo-Fi",
+      "playtimeMinutes": 2829,
+      "iconHash": "ecb3d143001b2a7b6be6eacc56a958bb1018b89c",
+      "genres": [
+        "캐주얼",
+        "인디"
+      ],
+      "iconPath": "/steam-icons/3511030-ecb3d143001b2a7b6be6eacc56a958bb1018b89c.jpg"
+    },
+    {
+      "appId": 3557620,
+      "name": "Blue Archive",
+      "playtimeMinutes": 2783,
+      "iconHash": "4d674fb3da04732a2ede485dd638adcaf2ef48f0",
+      "genres": [
+        "어드벤처",
+        "캐주얼",
+        "RPG",
+        "전략"
+      ]
+    },
+    {
+      "appId": 1144200,
+      "name": "Ready or Not",
+      "playtimeMinutes": 2684,
+      "iconHash": "2ff04d6677a45dd95f0add718d646185539a82d8",
+      "genres": [
+        "액션",
+        "어드벤처",
+        "인디"
+      ],
+      "iconPath": "/steam-icons/1144200-2ff04d6677a45dd95f0add718d646185539a82d8.jpg"
+    },
+    {
+      "appId": 812140,
+      "name": "Assassin's Creed Odyssey",
+      "playtimeMinutes": 2646,
+      "iconHash": "4b6cf0715b30669411bf204bce7ed99a9c84671b",
+      "genres": [
+        "액션",
+        "어드벤처",
+        "RPG"
+      ],
+      "iconPath": "/steam-icons/812140-4b6cf0715b30669411bf204bce7ed99a9c84671b.jpg"
+    },
+    {
+      "appId": 413150,
+      "name": "Stardew Valley",
+      "playtimeMinutes": 2296,
+      "iconHash": "35d1377200084a4034238c05b0c8930451e2fb40",
+      "genres": [
+        "인디",
+        "RPG",
+        "시뮬레이션"
+      ],
+      "iconPath": "/steam-icons/413150-35d1377200084a4034238c05b0c8930451e2fb40.jpg"
+    },
+    {
+      "appId": 1811260,
+      "name": "EA SPORTS™ FIFA 23",
+      "playtimeMinutes": 2224,
+      "iconHash": "c069d465ac21b9d68260a14298f8124c0b9ea4e1",
+      "genres": [
+        "시뮬레이션",
+        "스포츠"
+      ],
+      "iconPath": "/steam-icons/1811260-c069d465ac21b9d68260a14298f8124c0b9ea4e1.jpg"
+    },
+    {
+      "appId": 1794680,
+      "name": "Vampire Survivors",
+      "playtimeMinutes": 2198,
+      "iconHash": "3677cf1be3be1f4ea42261c62ce10519715ade58",
+      "genres": [
+        "액션",
+        "캐주얼",
+        "인디",
+        "RPG"
+      ],
+      "iconPath": "/steam-icons/1794680-3677cf1be3be1f4ea42261c62ce10519715ade58.jpg"
+    },
+    {
+      "appId": 2440510,
+      "name": "Forza Motorsport",
+      "playtimeMinutes": 2197,
+      "iconHash": "ce4d35b2ffffdb419ebf048f479e377779f21b0b",
+      "genres": [
+        "레이싱"
+      ],
+      "iconPath": "/steam-icons/2440510-ce4d35b2ffffdb419ebf048f479e377779f21b0b.jpg"
+    },
+    {
+      "appId": 1040200,
+      "name": "Crime Scene Cleaner",
+      "playtimeMinutes": 2181,
+      "iconHash": "9f68c266494cc1ac3095c5d4c11d284d02f76925",
+      "genres": [
+        "액션",
+        "시뮬레이션"
+      ],
+      "iconPath": "/steam-icons/1040200-9f68c266494cc1ac3095c5d4c11d284d02f76925.jpg"
+    },
+    {
+      "appId": 1506830,
+      "name": "FIFA 22",
+      "playtimeMinutes": 2111,
+      "iconHash": "97e6ad42ea46c285ba047e8e7fd0487688e9d4c1",
+      "genres": [
+        "시뮬레이션",
+        "스포츠"
+      ],
+      "iconPath": "/steam-icons/1506830-97e6ad42ea46c285ba047e8e7fd0487688e9d4c1.jpg"
+    },
+    {
+      "appId": 252490,
+      "name": "Rust",
+      "playtimeMinutes": 2079,
+      "iconHash": "820be4782639f9c4b64fa3ca7e6c26a95ae4fd1c",
+      "genres": [
+        "액션",
+        "어드벤처",
+        "인디",
+        "대규모 멀티플레이어",
+        "RPG"
+      ],
+      "iconPath": "/steam-icons/252490-820be4782639f9c4b64fa3ca7e6c26a95ae4fd1c.jpg"
+    },
+    {
+      "appId": 1217060,
+      "name": "Gunfire Reborn",
+      "playtimeMinutes": 2042,
+      "iconHash": "446d10e4c62466203a4c60e3416d4307048710b8",
+      "genres": [
+        "액션",
+        "어드벤처",
+        "인디",
+        "RPG"
+      ],
+      "iconPath": "/steam-icons/1217060-446d10e4c62466203a4c60e3416d4307048710b8.jpg"
+    },
+    {
+      "appId": 1239080,
+      "name": "Door Kickers 2",
+      "playtimeMinutes": 2021,
+      "iconHash": "96c4d0baad05b41de29a2dd135dc848f0b79aa06",
+      "genres": [
+        "액션",
+        "인디",
+        "시뮬레이션",
+        "전략"
+      ],
+      "iconPath": "/steam-icons/1239080-96c4d0baad05b41de29a2dd135dc848f0b79aa06.jpg"
+    },
+    {
+      "appId": 552520,
+      "name": "Far Cry 5",
+      "playtimeMinutes": 1895,
+      "iconHash": "928df2d32021f480499a97458068f62c45298e7a",
+      "genres": [
+        "액션",
+        "어드벤처"
+      ],
+      "iconPath": "/steam-icons/552520-928df2d32021f480499a97458068f62c45298e7a.jpg"
+    },
+    {
+      "appId": 255710,
+      "name": "Cities: Skylines",
+      "playtimeMinutes": 1823,
+      "iconHash": "6cf7b10dd29db28448ef79698ed2118a03617d63",
+      "genres": [
+        "시뮬레이션",
+        "전략"
+      ],
+      "iconPath": "/steam-icons/255710-6cf7b10dd29db28448ef79698ed2118a03617d63.jpg"
+    },
+    {
+      "appId": 2060160,
+      "name": "The Farmer Was Replaced",
+      "playtimeMinutes": 1779,
+      "iconHash": "c5e5f32afc4cc79cc7a92bf174375367509e2866",
+      "genres": [
+        "캐주얼",
+        "인디",
+        "시뮬레이션",
+        "전략"
+      ],
+      "iconPath": "/steam-icons/2060160-c5e5f32afc4cc79cc7a92bf174375367509e2866.jpg"
+    },
+    {
+      "appId": 1938090,
+      "name": "Call of Duty®",
+      "playtimeMinutes": 1714,
+      "iconHash": "8eaf32220060344996cbf11f697a4f4be943e5f3",
+      "genres": [
+        "액션"
+      ],
+      "iconPath": "/steam-icons/1938090-8eaf32220060344996cbf11f697a4f4be943e5f3.jpg"
+    },
+    {
+      "appId": 648800,
+      "name": "Raft",
+      "playtimeMinutes": 1615,
+      "iconHash": "6a9ae357c4133b1b631b520edd25b1974f3afb68",
+      "genres": [
+        "어드벤처",
+        "인디",
+        "시뮬레이션"
+      ],
+      "iconPath": "/steam-icons/648800-6a9ae357c4133b1b631b520edd25b1974f3afb68.jpg"
+    },
+    {
+      "appId": 552500,
+      "name": "Warhammer: Vermintide 2",
+      "playtimeMinutes": 1529,
+      "iconHash": "a671f2ddf7359beba9702ac097baf6d50cb07202",
+      "genres": [
+        "액션",
+        "인디",
+        "RPG"
+      ],
+      "iconPath": "/steam-icons/552500-a671f2ddf7359beba9702ac097baf6d50cb07202.jpg"
+    },
+    {
+      "appId": 1426210,
+      "name": "It Takes Two",
+      "playtimeMinutes": 1524,
+      "iconHash": "6b15f6d81c4fc52056f4928b363b7fac591a945b",
+      "genres": [
+        "액션",
+        "어드벤처"
+      ],
+      "iconPath": "/steam-icons/1426210-6b15f6d81c4fc52056f4928b363b7fac591a945b.jpg"
+    },
+    {
+      "appId": 863550,
+      "name": "HITMAN™ 2",
+      "playtimeMinutes": 1399,
+      "iconHash": "3f7c071da7a338e03f6243b73c02c072f1bacee9",
+      "genres": [
+        "액션"
+      ],
+      "iconPath": "/steam-icons/863550-3f7c071da7a338e03f6243b73c02c072f1bacee9.jpg"
+    },
+    {
+      "appId": 231430,
+      "name": "Company of Heroes 2",
+      "playtimeMinutes": 1305,
+      "iconHash": "5e7e1866fb4f33a17393b0441cd1c750dbd91c5f",
+      "genres": [
+        "전략"
+      ],
+      "iconPath": "/steam-icons/231430-5e7e1866fb4f33a17393b0441cd1c750dbd91c5f.jpg"
+    },
+    {
+      "appId": 1422440,
+      "name": "Cataclismo",
+      "playtimeMinutes": 1218,
+      "iconHash": "9da05eda6ab1949b2f96c9b106325826daf9b3dd",
+      "genres": [
+        "시뮬레이션",
+        "전략"
+      ],
+      "iconPath": "/steam-icons/1422440-9da05eda6ab1949b2f96c9b106325826daf9b3dd.jpg"
+    },
+    {
+      "appId": 546560,
+      "name": "Half-Life: Alyx",
+      "playtimeMinutes": 1023,
+      "iconHash": "225032ac2ad1aca8f5fd98baa2b9daf1eebea5ca",
+      "genres": [
+        "액션",
+        "어드벤처"
+      ],
+      "iconPath": "/steam-icons/546560-225032ac2ad1aca8f5fd98baa2b9daf1eebea5ca.jpg"
+    },
+    {
+      "appId": 688420,
+      "name": "Bad North: Jotunn Edition",
+      "playtimeMinutes": 1012,
+      "iconHash": "038a9c080d91b1963b51498541a718f844a0f162",
+      "genres": [
+        "액션",
+        "인디",
+        "시뮬레이션"
+      ],
+      "iconPath": "/steam-icons/688420-038a9c080d91b1963b51498541a718f844a0f162.jpg"
+    },
+    {
+      "appId": 312660,
+      "name": "Sniper Elite 4",
+      "playtimeMinutes": 987,
+      "iconHash": "3a1dbbf59326c0bb78113db7ac0d70b9988b3ce8",
+      "genres": [
+        "액션",
+        "어드벤처"
+      ],
+      "iconPath": "/steam-icons/312660-3a1dbbf59326c0bb78113db7ac0d70b9988b3ce8.jpg"
+    },
+    {
+      "appId": 2492290,
+      "name": "Uncover the Smoking Gun",
+      "playtimeMinutes": 986,
+      "iconHash": "47a61255ac1f343a24eeb2e36e6341a8703e296d",
+      "genres": [
+        "어드벤처",
+        "캐주얼",
+        "인디",
+        "시뮬레이션",
+        "전략"
+      ],
+      "iconPath": "/steam-icons/2492290-47a61255ac1f343a24eeb2e36e6341a8703e296d.jpg"
+    },
+    {
+      "appId": 2680010,
+      "name": "The First Berserker: Khazan",
+      "playtimeMinutes": 947,
+      "iconHash": "6b814f92e25cec848c9729ce26c8f39afcc6e5f7",
+      "genres": [
+        "액션",
+        "어드벤처",
+        "RPG"
+      ],
+      "iconPath": "/steam-icons/2680010-6b814f92e25cec848c9729ce26c8f39afcc6e5f7.jpg"
+    },
+    {
+      "appId": 703080,
+      "name": "Planet Zoo",
+      "playtimeMinutes": 940,
+      "iconHash": "68c7a610498955f547b0ece0aff081d23f2025b5",
+      "genres": [
+        "캐주얼",
+        "시뮬레이션",
+        "전략"
+      ],
+      "iconPath": "/steam-icons/703080-68c7a610498955f547b0ece0aff081d23f2025b5.jpg"
+    },
+    {
+      "appId": 550,
+      "name": "Left 4 Dead 2",
+      "playtimeMinutes": 930,
+      "iconHash": "7d5a243f9500d2f8467312822f8af2a2928777ed",
+      "genres": [
+        "액션"
+      ],
+      "iconPath": "/steam-icons/550-7d5a243f9500d2f8467312822f8af2a2928777ed.jpg"
+    },
+    {
+      "appId": 1604030,
+      "name": "V Rising",
+      "playtimeMinutes": 825,
+      "iconHash": "d18204000a839feb84393b3d860c17cd4a4b269c",
+      "genres": [
+        "액션",
+        "어드벤처",
+        "대규모 멀티플레이어"
+      ],
+      "iconPath": "/steam-icons/1604030-d18204000a839feb84393b3d860c17cd4a4b269c.jpg"
+    },
+    {
+      "appId": 2661300,
+      "name": "Grounded 2",
+      "playtimeMinutes": 769,
+      "iconHash": "0e56e01c18bf303a65ba60dddfa842cc85d1da33",
+      "genres": [
+        "액션",
+        "어드벤처"
+      ],
+      "iconPath": "/steam-icons/2661300-0e56e01c18bf303a65ba60dddfa842cc85d1da33.jpg"
+    },
+    {
+      "appId": 1964360,
+      "name": "Sexy Mystic Survivors",
+      "playtimeMinutes": 751,
+      "iconHash": "ff7a8033e6a46cc63d457750da4c96fa97851665",
+      "genres": [
+        "액션",
+        "캐주얼",
+        "인디",
+        "RPG"
+      ],
+      "iconPath": "/steam-icons/1964360-ff7a8033e6a46cc63d457750da4c96fa97851665.jpg"
+    },
+    {
+      "appId": 108600,
+      "name": "Project Zomboid",
+      "playtimeMinutes": 697,
+      "iconHash": "2bd4642ae337e378e7b04a19d19683425c5f81a4",
+      "genres": [
+        "인디",
+        "RPG",
+        "시뮬레이션"
+      ],
+      "iconPath": "/steam-icons/108600-2bd4642ae337e378e7b04a19d19683425c5f81a4.jpg"
+    },
+    {
+      "appId": 236390,
+      "name": "War Thunder",
+      "playtimeMinutes": 672,
+      "iconHash": "c69fbafb6e9891314cc5df0fe6a659612c289bf9",
+      "genres": [
+        "액션",
+        "대규모 멀티플레이어",
+        "시뮬레이션"
+      ],
+      "iconPath": "/steam-icons/236390-c69fbafb6e9891314cc5df0fe6a659612c289bf9.jpg"
+    },
+    {
+      "appId": 620,
+      "name": "Portal 2",
+      "playtimeMinutes": 671,
+      "iconHash": "25a5a16b2423bf7487ac5340b5b0948cef48c5f8",
+      "genres": [
+        "액션",
+        "어드벤처"
+      ],
+      "iconPath": "/steam-icons/620-25a5a16b2423bf7487ac5340b5b0948cef48c5f8.jpg"
+    },
+    {
+      "appId": 1222700,
+      "name": "A Way Out",
+      "playtimeMinutes": 592,
+      "iconHash": "ac36b7d06c117d34c204166c3120e15910ef2b8b",
+      "genres": [
+        "액션",
+        "어드벤처",
+        "인디"
+      ],
+      "iconPath": "/steam-icons/1222700-ac36b7d06c117d34c204166c3120e15910ef2b8b.jpg"
+    },
+    {
+      "appId": 976730,
+      "name": "Halo: The Master Chief Collection",
+      "playtimeMinutes": 592,
+      "iconHash": "196a45d8df1981ff6b6b1872a38dc38f6c22875d",
+      "genres": [
+        "액션"
+      ],
+      "iconPath": "/steam-icons/976730-196a45d8df1981ff6b6b1872a38dc38f6c22875d.jpg"
+    },
+    {
+      "appId": 381210,
+      "name": "Dead by Daylight",
+      "playtimeMinutes": 533,
+      "iconHash": "aa152097a700fd6f4707397ce41794ea30874790",
+      "genres": [
+        "액션"
+      ],
+      "iconPath": "/steam-icons/381210-aa152097a700fd6f4707397ce41794ea30874790.jpg"
+    },
+    {
+      "appId": 865360,
+      "name": "We Were Here Together",
+      "playtimeMinutes": 457,
+      "iconHash": "48102be9c6ee895f77d2af44ac83a1e6150cd458",
+      "genres": [
+        "어드벤처",
+        "캐주얼",
+        "인디"
+      ],
+      "iconPath": "/steam-icons/865360-48102be9c6ee895f77d2af44ac83a1e6150cd458.jpg"
+    },
+    {
+      "appId": 453480,
+      "name": "Shadowverse",
+      "playtimeMinutes": 427,
+      "iconHash": "65663ec45ad1ea015a242fb7738ff06f38d114fe",
+      "genres": [
+        "전략"
+      ],
+      "iconPath": "/steam-icons/453480-65663ec45ad1ea015a242fb7738ff06f38d114fe.jpg"
+    },
+    {
+      "appId": 242760,
+      "name": "The Forest",
+      "playtimeMinutes": 398,
+      "iconHash": "3a6847f6ac5879e48531db52261771d5e22904ac",
+      "genres": [
+        "액션",
+        "어드벤처",
+        "인디",
+        "시뮬레이션"
+      ],
+      "iconPath": "/steam-icons/242760-3a6847f6ac5879e48531db52261771d5e22904ac.jpg"
+    },
+    {
+      "appId": 2567870,
+      "name": "Chained Together",
+      "playtimeMinutes": 374,
+      "iconHash": "231b8f624ff26721431fe5749fa5ab5bccd75ff4",
+      "genres": [
+        "어드벤처",
+        "캐주얼",
+        "인디",
+        "시뮬레이션"
+      ],
+      "iconPath": "/steam-icons/2567870-231b8f624ff26721431fe5749fa5ab5bccd75ff4.jpg"
+    },
+    {
+      "appId": 1272320,
+      "name": "Diplomacy is Not an Option",
+      "playtimeMinutes": 348,
+      "iconHash": "3f6a00fbd8921cd0845af2cd96c3247f0863b194",
+      "genres": [
+        "액션",
+        "어드벤처",
+        "캐주얼",
+        "인디",
+        "시뮬레이션",
+        "전략"
+      ],
+      "iconPath": "/steam-icons/1272320-3f6a00fbd8921cd0845af2cd96c3247f0863b194.jpg"
+    },
+    {
+      "appId": 1273400,
+      "name": "Construction Simulator",
+      "playtimeMinutes": 343,
+      "iconHash": "e8d8dcccca84500b17912f4def1209d07700480c",
+      "genres": [
+        "캐주얼",
+        "시뮬레이션"
+      ],
+      "iconPath": "/steam-icons/1273400-e8d8dcccca84500b17912f4def1209d07700480c.jpg"
+    },
+    {
+      "appId": 322330,
+      "name": "Don't Starve Together",
+      "playtimeMinutes": 338,
+      "iconHash": "a80aa6cff8eebc1cbc18c367d9ab063e1553b0ee",
+      "genres": [
+        "액션",
+        "어드벤처",
+        "인디",
+        "RPG",
+        "시뮬레이션",
+        "전략"
+      ],
+      "iconPath": "/steam-icons/322330-a80aa6cff8eebc1cbc18c367d9ab063e1553b0ee.jpg"
+    },
+    {
+      "appId": 4128400,
+      "name": "eBaseball™: PRO SPIRIT",
+      "playtimeMinutes": 328,
+      "iconHash": "ebb091eafe886097f774de50e38e1fb30c1d6cd8",
+      "genres": [
+        "액션",
+        "스포츠"
+      ],
+      "iconPath": "/steam-icons/4128400-ebb091eafe886097f774de50e38e1fb30c1d6cd8.jpg"
+    },
+    {
+      "appId": 246900,
+      "name": "Viscera Cleanup Detail",
+      "playtimeMinutes": 317,
+      "iconHash": "468438972a79636192adf089d3f830aad072a844",
+      "genres": [
+        "인디",
+        "시뮬레이션"
+      ],
+      "iconPath": "/steam-icons/246900-468438972a79636192adf089d3f830aad072a844.jpg"
+    },
+    {
+      "appId": 2441270,
+      "name": "Kill The Crows",
+      "playtimeMinutes": 301,
+      "iconHash": "4dd80112e59f3dc2da897f419c699b69bc6040dc",
+      "genres": [
+        "액션",
+        "인디"
+      ],
+      "iconPath": "/steam-icons/2441270-4dd80112e59f3dc2da897f419c699b69bc6040dc.jpg"
+    },
+    {
+      "appId": 1238860,
+      "name": "Battlefield 4™",
+      "playtimeMinutes": 287,
+      "iconHash": "fe0bd4bd2adde978ca411a4b2725c1b6d72717ef",
+      "genres": [
+        "액션"
+      ],
+      "iconPath": "/steam-icons/1238860-fe0bd4bd2adde978ca411a4b2725c1b6d72717ef.jpg"
+    },
+    {
+      "appId": 4144920,
+      "name": "PUBG: Black Budget Playtest",
+      "playtimeMinutes": 277,
+      "iconHash": "784d676f69843b4622ed681d5ea94f2f16f43948",
+      "genres": [],
+      "iconPath": "/steam-icons/4144920-784d676f69843b4622ed681d5ea94f2f16f43948.jpg"
+    },
+    {
+      "appId": 3631290,
+      "name": "Slots & Daggers",
+      "playtimeMinutes": 267,
+      "iconHash": "bb96d9504759b09d384a4bf934dfe94fc19f57e3",
+      "genres": [
+        "인디",
+        "시뮬레이션",
+        "전략"
+      ],
+      "iconPath": "/steam-icons/3631290-bb96d9504759b09d384a4bf934dfe94fc19f57e3.jpg"
+    },
+    {
+      "appId": 3263320,
+      "name": "Carry The Glass",
+      "playtimeMinutes": 261,
+      "iconHash": "30caae17dc829272011a7c557c36b5708c6497a7",
+      "genres": [
+        "어드벤처",
+        "캐주얼",
+        "인디",
+        "시뮬레이션"
+      ],
+      "iconPath": "/steam-icons/3263320-30caae17dc829272011a7c557c36b5708c6497a7.jpg"
+    },
+    {
+      "appId": 673750,
+      "name": "Super Bunny Man",
+      "playtimeMinutes": 237,
+      "iconHash": "84dacb8846b7ede61ca12576ee2c5393b390ed88",
+      "genres": [
+        "액션",
+        "인디"
+      ],
+      "iconPath": "/steam-icons/673750-84dacb8846b7ede61ca12576ee2c5393b390ed88.jpg"
+    },
+    {
+      "appId": 2357570,
+      "name": "Overwatch®",
+      "playtimeMinutes": 233,
+      "iconHash": "da42bd294c941d5947b1bc2c2b2efa1313d36a91",
+      "genres": [],
+      "iconPath": "/steam-icons/2357570-da42bd294c941d5947b1bc2c2b2efa1313d36a91.jpg"
+    },
+    {
+      "appId": 3241660,
+      "name": "R.E.P.O.",
+      "playtimeMinutes": 222,
+      "iconHash": "b8bf4770408fc369e15cebd42e0026a27b67aaa8",
+      "genres": [
+        "액션"
+      ],
+      "iconPath": "/steam-icons/3241660-b8bf4770408fc369e15cebd42e0026a27b67aaa8.jpg"
+    },
+    {
+      "appId": 1260320,
+      "name": "Party Animals",
+      "playtimeMinutes": 208,
+      "iconHash": "868cd2d22c96076658ff5b572c4dc790c200de7e",
+      "genres": [
+        "액션",
+        "캐주얼",
+        "인디"
+      ],
+      "iconPath": "/steam-icons/1260320-868cd2d22c96076658ff5b572c4dc790c200de7e.jpg"
+    },
+    {
+      "appId": 1761620,
+      "name": "Headbangers: Rhythm Royale",
+      "playtimeMinutes": 194,
+      "iconHash": "e47b14f1fc10962b6870abdffac7262d819fd322",
+      "genres": [
+        "캐주얼"
+      ],
+      "iconPath": "/steam-icons/1761620-e47b14f1fc10962b6870abdffac7262d819fd322.jpg"
+    },
+    {
+      "appId": 1930600,
+      "name": "Beautiful Mystic Survivors",
+      "playtimeMinutes": 191,
+      "iconHash": "032930ad8f4c7e1ca544706883984e527a78bfdd",
+      "genres": [
+        "액션",
+        "캐주얼",
+        "인디",
+        "RPG"
+      ],
+      "iconPath": "/steam-icons/1930600-032930ad8f4c7e1ca544706883984e527a78bfdd.jpg"
+    },
+    {
+      "appId": 1097150,
+      "name": "Fall Guys",
+      "playtimeMinutes": 189,
+      "iconHash": "6c027709b9eb1417c993bc7d513b97b232002368",
+      "genres": [
+        "액션",
+        "캐주얼",
+        "인디",
+        "대규모 멀티플레이어",
+        "스포츠"
+      ],
+      "iconPath": "/steam-icons/1097150-6c027709b9eb1417c993bc7d513b97b232002368.jpg"
+    },
+    {
+      "appId": 4162040,
+      "name": "Zenless Zone Zero",
+      "playtimeMinutes": 188,
+      "iconHash": "ff5f5a2eb168b2f1fa7c657f07af0871ba2fbf82",
+      "genres": [
+        "액션",
+        "어드벤처",
+        "RPG"
+      ]
+    },
+    {
+      "appId": 1203620,
+      "name": "Enshrouded",
+      "playtimeMinutes": 183,
+      "iconHash": "b51ff4aa19722a1f3587b35f37f590a998f36a9a",
+      "genres": [
+        "액션",
+        "어드벤처",
+        "인디",
+        "RPG"
+      ],
+      "iconPath": "/steam-icons/1203620-b51ff4aa19722a1f3587b35f37f590a998f36a9a.jpg"
+    },
+    {
+      "appId": 477160,
+      "name": "Human Fall Flat",
+      "playtimeMinutes": 168,
+      "iconHash": "15c6f6a4d69633a63ee410b24a2417f16d803b06",
+      "genres": [
+        "어드벤처",
+        "캐주얼",
+        "인디",
+        "시뮬레이션"
+      ],
+      "iconPath": "/steam-icons/477160-15c6f6a4d69633a63ee410b24a2417f16d803b06.jpg"
+    },
+    {
+      "appId": 945360,
+      "name": "Among Us",
+      "playtimeMinutes": 159,
+      "iconHash": "b82c3f46da8f3c918e1c9e0d18bd6fa8fcef6801",
+      "genres": [
+        "캐주얼"
+      ],
+      "iconPath": "/steam-icons/945360-b82c3f46da8f3c918e1c9e0d18bd6fa8fcef6801.jpg"
+    },
+    {
+      "appId": 1621690,
+      "name": "Core Keeper",
+      "playtimeMinutes": 157,
+      "iconHash": "53517a1b2eb22e22ac4a1f71c814209f1b84c063",
+      "genres": [
+        "액션",
+        "어드벤처",
+        "인디",
+        "RPG",
+        "시뮬레이션"
+      ],
+      "iconPath": "/steam-icons/1621690-53517a1b2eb22e22ac4a1f71c814209f1b84c063.jpg"
+    },
+    {
+      "appId": 400,
+      "name": "Portal",
+      "playtimeMinutes": 154,
+      "iconHash": "cfa928ab4119dd137e50d728e8fe703e4e970aff",
+      "genres": [
+        "액션"
+      ],
+      "iconPath": "/steam-icons/400-cfa928ab4119dd137e50d728e8fe703e4e970aff.jpg"
+    },
+    {
+      "appId": 3527290,
+      "name": "PEAK",
+      "playtimeMinutes": 145,
+      "iconHash": "b3a992fd5991bd2f4c956d58e062b0ce2988d6cd",
+      "genres": [
+        "액션",
+        "어드벤처",
+        "인디"
+      ],
+      "iconPath": "/steam-icons/3527290-b3a992fd5991bd2f4c956d58e062b0ce2988d6cd.jpg"
+    },
+    {
+      "appId": 1089350,
+      "name": "NBA 2K20",
+      "playtimeMinutes": 144,
+      "iconHash": "cf770a436cd5f8ba8906274b806efed0d819dd52",
+      "genres": [
+        "시뮬레이션",
+        "스포츠"
+      ],
+      "iconPath": "/steam-icons/1089350-cf770a436cd5f8ba8906274b806efed0d819dd52.jpg"
+    },
+    {
+      "appId": 3949040,
+      "name": "RV There Yet?",
+      "playtimeMinutes": 143,
+      "iconHash": "cd01f1daaaa3fb022e9913dc2d66a23c5091b5d5",
+      "genres": [
+        "액션",
+        "어드벤처",
+        "인디"
+      ],
+      "iconPath": "/steam-icons/3949040-cd01f1daaaa3fb022e9913dc2d66a23c5091b5d5.jpg"
+    },
+    {
+      "appId": 2139460,
+      "name": "Once Human",
+      "playtimeMinutes": 131,
+      "iconHash": "e1c29227c162232120c15edcf282df61ee35f091",
+      "genres": [
+        "액션",
+        "어드벤처",
+        "캐주얼",
+        "대규모 멀티플레이어",
+        "레이싱",
+        "RPG",
+        "시뮬레이션",
+        "전략"
+      ],
+      "iconPath": "/steam-icons/2139460-e1c29227c162232120c15edcf282df61ee35f091.jpg"
+    },
+    {
+      "appId": 3058140,
+      "name": "Desperate Place",
+      "playtimeMinutes": 127,
+      "iconHash": "7e0d2b45e16ccbca33fbb675e861644309bf5226",
+      "genres": [
+        "인디",
+        "전략"
+      ],
+      "iconPath": "/steam-icons/3058140-7e0d2b45e16ccbca33fbb675e861644309bf5226.jpg"
+    },
+    {
+      "appId": 4110840,
+      "name": "EVILBANE Playtest",
+      "playtimeMinutes": 122,
+      "iconHash": "562abbf72517bfb197793ca2c69be77e2aca67da",
+      "genres": []
+    },
+    {
+      "appId": 2692990,
+      "name": "DON'T SCREAM TOGETHER",
+      "playtimeMinutes": 121,
+      "iconHash": "3f21722f5a4977c26b8612ec1cfdee3ac4c2af4b",
+      "genres": [
+        "캐주얼",
+        "시뮬레이션"
+      ],
+      "iconPath": "/steam-icons/2692990-3f21722f5a4977c26b8612ec1cfdee3ac4c2af4b.jpg"
+    },
+    {
+      "appId": 460950,
+      "name": "Katana ZERO",
+      "playtimeMinutes": 116,
+      "iconHash": "874ee87e03abd66ff158727c051ceb173e3cba3c",
+      "genres": [
+        "액션",
+        "인디"
+      ],
+      "iconPath": "/steam-icons/460950-874ee87e03abd66ff158727c051ceb173e3cba3c.jpg"
+    },
+    {
+      "appId": 728880,
+      "name": "Overcooked! 2",
+      "playtimeMinutes": 116,
+      "iconHash": "bac36f471109038ae0b40619de4109d475f86a54",
+      "genres": [
+        "액션",
+        "캐주얼",
+        "인디"
+      ],
+      "iconPath": "/steam-icons/728880-bac36f471109038ae0b40619de4109d475f86a54.jpg"
+    },
+    {
+      "appId": 285900,
+      "name": "Gang Beasts",
+      "playtimeMinutes": 110,
+      "iconHash": "fe0f0440dabf5ff8d8326d2d6ff629e016fe3559",
+      "genres": [
+        "액션",
+        "어드벤처",
+        "캐주얼",
+        "인디",
+        "시뮬레이션"
+      ],
+      "iconPath": "/steam-icons/285900-fe0f0440dabf5ff8d8326d2d6ff629e016fe3559.jpg"
+    },
+    {
+      "appId": 2585120,
+      "name": "NAKWON: LAST PARADISE Playtest",
+      "playtimeMinutes": 104,
+      "iconHash": "24e6c16109ab8c1e9cd491c6978d570fd76db4fe",
+      "genres": [],
+      "iconPath": "/steam-icons/2585120-24e6c16109ab8c1e9cd491c6978d570fd76db4fe.jpg"
+    },
+    {
+      "appId": 2767030,
+      "name": "Marvel Rivals",
+      "playtimeMinutes": 90,
+      "iconHash": "839b4712925b95702ca56e0c4d399adf54f4d617",
+      "genres": [
+        "액션",
+        "어드벤처",
+        "캐주얼",
+        "대규모 멀티플레이어",
+        "레이싱",
+        "RPG",
+        "전략"
+      ],
+      "iconPath": "/steam-icons/2767030-839b4712925b95702ca56e0c4d399adf54f4d617.jpg"
+    },
+    {
+      "appId": 273350,
+      "name": "Evolve Stage 2",
+      "playtimeMinutes": 76,
+      "iconHash": "6b9e205c389185a4b0e079a13090c751e47375d2",
+      "genres": [
+        "액션"
+      ],
+      "iconPath": "/steam-icons/273350-6b9e205c389185a4b0e079a13090c751e47375d2.jpg"
+    },
+    {
+      "appId": 466240,
+      "name": "Deceit",
+      "playtimeMinutes": 73,
+      "iconHash": "9ab4436d104e73d560f6e0c439bcb150a9c5a174",
+      "genres": [
+        "액션",
+        "인디"
+      ],
+      "iconPath": "/steam-icons/466240-9ab4436d104e73d560f6e0c439bcb150a9c5a174.jpg"
+    },
+    {
+      "appId": 2195250,
+      "name": "EA SPORTS FC™ 24",
+      "playtimeMinutes": 73,
+      "iconHash": "d01e05e0fb8e77c790c699b4fa0a9559cf80d16d",
+      "genres": [
+        "시뮬레이션",
+        "스포츠"
+      ],
+      "iconPath": "/steam-icons/2195250-d01e05e0fb8e77c790c699b4fa0a9559cf80d16d.jpg"
+    },
+    {
+      "appId": 4214820,
+      "name": "Game of Thrones Kingsroad",
+      "playtimeMinutes": 68,
+      "iconHash": "4335b5eea2c96e54531e94c197f75821efd4cb4a",
+      "genres": [
+        "액션"
+      ],
+      "iconPath": "/steam-icons/4214820-4335b5eea2c96e54531e94c197f75821efd4cb4a.jpg"
+    },
+    {
+      "appId": 1206610,
+      "name": "Rubber Bandits",
+      "playtimeMinutes": 61,
+      "iconHash": "0c2e59a55eccd11a9f438cd54d191a6504e27e7a",
+      "genres": [
+        "액션",
+        "캐주얼",
+        "인디"
+      ],
+      "iconPath": "/steam-icons/1206610-0c2e59a55eccd11a9f438cd54d191a6504e27e7a.jpg"
+    },
+    {
+      "appId": 493340,
+      "name": "Planet Coaster",
+      "playtimeMinutes": 59,
+      "iconHash": "1b2f29e743dd3048f21fefd9642d86a5f5123968",
+      "genres": [
+        "액션",
+        "어드벤처",
+        "캐주얼",
+        "시뮬레이션",
+        "전략"
+      ],
+      "iconPath": "/steam-icons/493340-1b2f29e743dd3048f21fefd9642d86a5f5123968.jpg"
+    },
+    {
+      "appId": 377300,
+      "name": "Thunder Tier One",
+      "playtimeMinutes": 57,
+      "iconHash": "bfde27be56ecc6079c100e2b6633fc7eef7833df",
+      "genres": [
+        "액션",
+        "시뮬레이션"
+      ],
+      "iconPath": "/steam-icons/377300-bfde27be56ecc6079c100e2b6633fc7eef7833df.jpg"
+    },
+    {
+      "appId": 393380,
+      "name": "Squad",
+      "playtimeMinutes": 53,
+      "iconHash": "eb66a8cb52165274c84cae6526205065d13119d5",
+      "genres": [
+        "액션",
+        "인디",
+        "대규모 멀티플레이어",
+        "전략"
+      ],
+      "iconPath": "/steam-icons/393380-eb66a8cb52165274c84cae6526205065d13119d5.jpg"
+    },
+    {
+      "appId": 1161160,
+      "name": "Talesshop Puzzle",
+      "playtimeMinutes": 48,
+      "iconHash": "a8f2885a502c454dc772dcfa0f5c6c90a8af2876",
+      "genres": [
+        "캐주얼",
+        "인디"
+      ],
+      "iconPath": "/steam-icons/1161160-a8f2885a502c454dc772dcfa0f5c6c90a8af2876.jpg"
+    },
+    {
+      "appId": 291550,
+      "name": "Brawlhalla",
+      "playtimeMinutes": 45,
+      "iconHash": "c43fac31b8bf8821764603a14d09412bc3d45f66",
+      "genres": [
+        "액션",
+        "인디"
+      ],
+      "iconPath": "/steam-icons/291550-c43fac31b8bf8821764603a14d09412bc3d45f66.jpg"
+    },
+    {
+      "appId": 1590320,
+      "name": "Bro Falls: Ultimate Showdown",
+      "playtimeMinutes": 37,
+      "iconHash": "b9d9a1d45aca080abaa466485802519edbbed9ca",
+      "genres": [
+        "액션",
+        "캐주얼",
+        "인디",
+        "대규모 멀티플레이어",
+        "레이싱"
+      ],
+      "iconPath": "/steam-icons/1590320-b9d9a1d45aca080abaa466485802519edbbed9ca.jpg"
+    },
+    {
+      "appId": 1272080,
+      "name": "PAYDAY 3",
+      "playtimeMinutes": 34,
+      "iconHash": "d4ad48893646cae61934ea10749527346f8b7736",
+      "genres": [
+        "액션",
+        "어드벤처",
+        "RPG"
+      ],
+      "iconPath": "/steam-icons/1272080-d4ad48893646cae61934ea10749527346f8b7736.jpg"
+    },
+    {
+      "appId": 438100,
+      "name": "VRChat",
+      "playtimeMinutes": 34,
+      "iconHash": "52c5f93bd9f8de008307f5fad95023600267462c",
+      "genres": [
+        "어드벤처",
+        "캐주얼",
+        "대규모 멀티플레이어",
+        "시뮬레이션",
+        "스포츠"
+      ],
+      "iconPath": "/steam-icons/438100-52c5f93bd9f8de008307f5fad95023600267462c.jpg"
+    },
+    {
+      "appId": 2814840,
+      "name": "Project ZETA Playtest",
+      "playtimeMinutes": 29,
+      "iconHash": "c56101b437b9391bfbb184a7ce0147486ce5e1d8",
+      "genres": []
+    },
+    {
+      "appId": 894020,
+      "name": "Death's Door",
+      "playtimeMinutes": 27,
+      "iconHash": "d48d2167c15e8d2af57cfbc31228b90e36f4508c",
+      "genres": [
+        "액션",
+        "어드벤처",
+        "인디",
+        "RPG"
+      ],
+      "iconPath": "/steam-icons/894020-d48d2167c15e8d2af57cfbc31228b90e36f4508c.jpg"
+    },
+    {
+      "appId": 824270,
+      "name": "KovaaK's",
+      "playtimeMinutes": 24,
+      "iconHash": "ed2df8e3157c3fe9b62d0b72bdcd20d4e674be32",
+      "genres": [
+        "액션",
+        "인디",
+        "시뮬레이션"
+      ],
+      "iconPath": "/steam-icons/824270-ed2df8e3157c3fe9b62d0b72bdcd20d4e674be32.jpg"
+    },
+    {
+      "appId": 710920,
+      "name": "Darksiders Genesis",
+      "playtimeMinutes": 10,
+      "iconHash": "bc17b70c4360207b64d6d0b278d04291bafed2e3",
+      "genres": [
+        "액션",
+        "어드벤처"
+      ],
+      "iconPath": "/steam-icons/710920-bc17b70c4360207b64d6d0b278d04291bafed2e3.jpg"
+    }
+  ]
+}

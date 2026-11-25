@@ -23,6 +23,14 @@ jobs:
           node-version: 24
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      - name: Refresh selected Steam games
+        env:
+          STEAM_WEB_API_KEY: ${{ secrets.STEAM_WEB_API_KEY }}
+          STEAM_ID: ${{ secrets.STEAM_ID }}
+        run: |
+          if [ -n "$STEAM_WEB_API_KEY" ] && [ -n "$STEAM_ID" ]; then
+            node scripts/sync-steam.mjs
+          fi
       - name: Configure Pages
         id: pages
         uses: actions/configure-pages@v5

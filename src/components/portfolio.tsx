@@ -3,6 +3,7 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { useEffect, useRef, useState } from "react";
+import SteamHistory from "./steam-history";
 import { assetUrl, videoAssetPattern, type PortfolioSnapshot, type PortfolioProject } from "@/lib/portfolio";
 
 const PdfViewer = dynamic(() => import("./pdf-viewer"), { ssr: false, loading: () => <p className="preview-banner">문서 뷰어를 불러오는 중…</p> });
@@ -75,82 +76,10 @@ function PlanningDocuments({ documents, preview }: { documents: PortfolioProject
   </section>;
 }
 
-function PlanningFilter({ categories, selectedCategory, newestFirst, onCategoryChange, onOrderChange }: {
-  categories: string[];
-  selectedCategory: string;
-  newestFirst: boolean;
-  onCategoryChange: (category: string) => void;
-  onOrderChange: (newestFirst: boolean) => void;
-}) {
-  const [panel, setPanel] = useState<"category" | "order">("category");
-  const [open, setOpen] = useState(false);
-  const [availableHeight, setAvailableHeight] = useState<number>();
-  const controls = useRef<HTMLDivElement>(null);
-  const trigger = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    if (!open) return;
-    function closeOutside(event: PointerEvent) {
-      if (event.target instanceof Node && !controls.current?.contains(event.target)) setOpen(false);
-    }
-    function closeOnEscape(event: KeyboardEvent) {
-      if (event.key !== "Escape") return;
-      setOpen(false);
-      trigger.current?.focus();
-    }
-    function measureSpace() {
-      if (controls.current) {
-        setAvailableHeight(Math.max(0, controls.current.getBoundingClientRect().bottom - 8));
-      }
-    }
-    measureSpace();
-    window.addEventListener("resize", measureSpace);
-    window.addEventListener("scroll", measureSpace, { passive: true });
-    document.addEventListener("pointerdown", closeOutside);
-    document.addEventListener("keydown", closeOnEscape);
-    return () => {
-      window.removeEventListener("resize", measureSpace);
-      window.removeEventListener("scroll", measureSpace);
-      document.removeEventListener("pointerdown", closeOutside);
-      document.removeEventListener("keydown", closeOnEscape);
-    };
-  }, [open]);
-
-  return <div className="collection-controls" ref={controls}>
-    <button type="button" className="filter-trigger" ref={trigger} aria-expanded={open} data-filter-active={Boolean(selectedCategory)} aria-controls="planning-filter" aria-label={selectedCategory ? `기획서 필터 · ${selectedCategory}` : "기획서 필터"} onClick={() => setOpen(!open)}>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <path d="M4 6h16M7 12h10m-7 6h4" />
-      </svg>
-    </button>
-    <div id="planning-filter" className="filter-popover" style={{ maxHeight: availableHeight }} hidden={!open} role="group" aria-label="기획서 필터 및 정렬">
-      <div className="filter-tabs" role="group" aria-label="설정 선택">
-        <button type="button" aria-pressed={panel === "category"} onClick={() => setPanel("category")}>항목</button>
-        <button type="button" aria-pressed={panel === "order"} onClick={() => setPanel("order")}>정렬</button>
-      </div>
-      {panel === "category" ? (
-        <div className="filter-options" role="group" aria-label="기획서 항목">
-          {["", ...categories].map(category => (
-            <button type="button" key={category} aria-pressed={category === selectedCategory} onClick={() => onCategoryChange(category)}>
-              {category || "전체"}
-            </button>
-          ))}
-        </div>
-      ) : (
-        <div className="filter-options" role="group" aria-label="최초 작성일 기준 정렬">
-          <button type="button" aria-pressed={!newestFirst} onClick={() => onOrderChange(false)}>오름차순</button>
-          <button type="button" aria-pressed={newestFirst} onClick={() => onOrderChange(true)}>내림차순</button>
-        </div>
-      )}
-    </div>
-  </div>;
-}
-
 export function Portfolio({ snapshot, projectId }: { snapshot: PortfolioSnapshot; projectId?: string }) {
   const [data, setData] = useState(snapshot);
   const [selection, setSelection] = useState(projectId);
   const [preview, setPreview] = useState(false);
-  const [planningCategory, setPlanningCategory] = useState("");
-  const [newestFirst, setNewestFirst] = useState(true);
   useEffect(() => {
     if (!["127.0.0.1", "localhost"].includes(location.hostname) || !new URLSearchParams(location.search).has("preview")) return;
     setPreview(true);
@@ -164,8 +93,6 @@ export function Portfolio({ snapshot, projectId }: { snapshot: PortfolioSnapshot
     return () => window.removeEventListener("message", receive);
   }, []);
   const projects = data.projects;
-  const planningCategories = [...new Set(projects.filter(project => project.section === "planning").flatMap(project => categoryNames(project.category)))];
-  const selectedCategory = planningCategories.includes(planningCategory) ? planningCategory : "";
   const active = projects.find(project => project.id === selection);
   function navigate(event: React.MouseEvent, id?: string) {
     if (!preview) return;
@@ -230,27 +157,16 @@ export function Portfolio({ snapshot, projectId }: { snapshot: PortfolioSnapshot
             {homeCollections.map(({ section, anchor, label }) => {
               const entries = projects.filter(project => project.section === section);
               if (!entries.length) return null;
-              const visibleEntries = section === "planning"
-                ? entries.filter(project => !selectedCategory || categoryNames(project.category).includes(selectedCategory))
-                : entries;
+              const visibleEntries = entries;
               if (section === "planning") {
                 visibleEntries.sort((first, second) => {
                   if (!first.authoredOn || !second.authoredOn) return Number(Boolean(second.authoredOn)) - Number(Boolean(first.authoredOn));
-                  return newestFirst
-                    ? second.authoredOn.localeCompare(first.authoredOn)
-                    : first.authoredOn.localeCompare(second.authoredOn);
+                  return second.authoredOn.localeCompare(first.authoredOn);
                 });
               }
               return <section key={section} id={anchor} aria-labelledby={`${anchor}-heading`}>
                 <div className="collection-header">
                   <h2 id={`${anchor}-heading`} className="collection-heading">{label}</h2>
-                  {section === "planning" && <PlanningFilter
-                    categories={planningCategories}
-                    selectedCategory={selectedCategory}
-                    newestFirst={newestFirst}
-                    onCategoryChange={setPlanningCategory}
-                    onOrderChange={setNewestFirst}
-                  />}
                 </div>
                 <div className="project-list">
                   {visibleEntries.map(project => (
@@ -281,10 +197,7 @@ export function Portfolio({ snapshot, projectId }: { snapshot: PortfolioSnapshot
             })}
             {!projects.length && <p className="empty-state">등록된 작업이 없습니다.</p>}
           </div>
-          <aside className="play-history" aria-labelledby="play-history-heading">
-            <h2 id="play-history-heading" className="collection-heading">게임 플레이 이력</h2>
-            <p className="play-history-empty">등록된 플레이 이력이 없습니다.</p>
-          </aside>
+          <SteamHistory />
         </div>
       </>}
     </main>
