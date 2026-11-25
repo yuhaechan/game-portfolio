@@ -52,7 +52,7 @@ export default function SteamHistory() {
     </div>
     {games.length ? <>
       <div className="steam-total" aria-live="polite" aria-atomic="true">
-        <span>{genre ? `${genre} 플레이시간` : "총 플레이시간"}</span>
+        <span>플레이시간</span>
         <p><strong>{formatHours(total)}</strong><span>시간</span></p>
         <small>Steam · {filtered.length}개 게임{genre ? " 합계" : " 기준"}</small>
       </div>
