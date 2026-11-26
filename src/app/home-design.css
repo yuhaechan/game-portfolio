@@ -1,0 +1,85 @@
+/* Hallmark · shape: grouped gallery · genre: editorial · theme: brand · redesign: restyle
+ * hero: kept · nav: original black name and email · footer: none, kept
+ * signature: original planning-document covers at readable scale · copy: verbatim
+ * critique: tiny type and unused canvas addressed with larger cards and a capped shared grid
+ * user-kept: gray Steam region and bordered playtime block; two original content groups */
+.site-header { max-width:1320px; min-height:76px; padding:var(--space-md) var(--space-xl); }
+.site-brand { font-size:18px; font-weight:700; letter-spacing:-.025em; }
+.header-contact { font-size:14px; gap:var(--space-sm); }
+.portfolio-home { background:var(--color-paper); padding-bottom:var(--space-2xl); }
+.home-title { position:absolute; width:1px; height:1px; padding:0; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+.home-layout { width:calc(100% - 80px); max-width:1240px; gap:var(--space-xl); padding-top:var(--space-xl); grid-template-columns:minmax(0,1fr); }
+.home-collections { grid-column:auto; gap:var(--space-optical-48); }
+.home-collections > section + section { padding-top:var(--space-xl); border-color:var(--color-rule); }
+.collection-header { margin-bottom:var(--space-lg); }
+.collection-header .collection-heading { font-size:26px; line-height:1.3; letter-spacing:-.035em; }
+.portfolio-home .home-collections > section { padding:var(--space-lg); background:var(--color-paper-3); border-radius:8px; }
+.portfolio-home .home-collections > section + section { padding-top:var(--space-lg); border:0; }
+.portfolio-home .collection-header { padding-bottom:var(--space-md); border-bottom:2px solid var(--color-ink); }
+.project-list { grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--space-lg); }
+.project-card { max-width:none; border-color:var(--color-rule); border-radius:8px; background:var(--color-paper-2); box-shadow:none; transition:transform var(--dur-micro) ease,border-color var(--dur-micro) ease; }
+.project-card-cover { aspect-ratio:16 / 10; background:var(--color-paper-3); border-color:var(--color-rule); }
+.project-card-copy { padding:var(--space-lg); }
+.project-card-copy h3 { gap:var(--space-xs); font-size:20px; line-height:1.45; }
+.project-card-copy .game-title { font-size:14px; font-weight:400; color:var(--color-muted); letter-spacing:0; }
+.work-title { font-weight:700; }
+.category { display:block; font-size:14px; margin-top:var(--space-sm); color:var(--color-muted); }
+.card-date { margin-top:var(--space-xs); font-size:13px; color:var(--color-muted); }
+.card-summary { font-size:14px; margin-top:var(--space-sm); }
+.play-history { grid-column:auto; align-self:start; padding:var(--space-lg); background:var(--color-paper-3); border:0; border-radius:8px; }
+.steam-history-header { margin-bottom:var(--space-lg); }
+.steam-history-header .collection-heading { font-size:20px; font-weight:700; line-height:1.4; letter-spacing:-.025em; }
+.steam-total { margin:0 0 var(--space-optical-20); padding:var(--space-optical-20); border-color:var(--color-rule-strong); background:var(--color-paper-2); border-radius:6px; }
+.steam-total > span { font-size:14px; color:var(--color-muted); }
+.steam-total p { margin:var(--space-sm) 0; gap:var(--space-xs); }
+.steam-total strong { font-size:36px; font-weight:700; letter-spacing:-.045em; }
+.steam-total p > span,.steam-total small { font-size:12px; color:var(--color-muted); }
+.steam-filter-controls { margin-bottom:var(--space-md); }
+.steam-filter-controls .filter-trigger { width:36px; height:36px; }
+.steam-filter-controls .filter-trigger[data-filter-active="false"] { color:var(--color-muted); border-color:var(--color-rule-strong); }
+.steam-selected-genre { min-height:36px; font-size:14px; }
+.steam-filter-panel { left:44px; max-width:calc(100dvw - 100px); box-shadow:var(--shadow-dropdown); }
+.steam-genre-option { font-size:14px; padding:var(--space-xs) var(--space-sm); }
+.steam-games { margin-top:0; gap:var(--space-sm); }
+.steam-games li { padding:var(--space-md); gap:var(--space-sm); border-radius:6px; background:var(--color-paper-2); }
+.steam-games a { font-size:14px; font-weight:700; gap:var(--space-sm); }
+.steam-icon { color:var(--color-muted); }
+.steam-time > span:last-child { font-size:12px; color:var(--color-muted); }
+.steam-time-track { height:4px; background:var(--color-rule); }
+.steam-time-track > span { background:var(--color-ink-2); }
+.steam-pagination { margin-top:var(--space-lg); gap:var(--space-md); }
+.steam-pagination button { width:40px; height:40px; border-color:var(--color-rule-strong); }
+.steam-pagination > span { font-size:14px; }
+.steam-updated { margin-top:var(--space-md); font-size:12px; color:var(--color-muted); }
+a:focus-visible,button:focus-visible,select:focus-visible { outline:2px solid var(--color-focus); outline-offset:4px; }
+button:active:not(:disabled) { transform:translateY(1px); }
+.project-card:active { transform:translateY(1px); }
+@media(hover:hover) and (pointer:fine) {
+  .project-card:hover { border-color:var(--color-ink); box-shadow:none; transform:translateY(-3px); }
+}
+@media(min-width:1200px) {
+  .home-layout { grid-template-columns:minmax(0,1fr) 304px; }
+}
+@media(max-width:800px) {
+  .site-header { padding:var(--space-md) var(--space-lg); }
+  .home-layout { width:calc(100% - 48px); }
+  .project-card-copy { padding:var(--space-optical-20); }
+}
+@media(max-width:639px) {
+  .site-header { min-height:72px; padding:var(--space-md); gap:var(--space-md); flex-wrap:wrap; }
+  .site-brand { font-size:16px; }
+  .header-contact { font-size:12px; gap:var(--space-xs); }
+  .header-contact svg { width:16px; height:16px; }
+  .home-layout { width:calc(100% - 32px); padding-top:var(--space-optical-28); gap:var(--space-optical-32); }
+  .project-list { gap:var(--space-md); grid-template-columns:minmax(0,1fr); }
+  .home-collections { gap:var(--space-optical-32); }
+  .home-collections > section + section { padding-top:var(--space-optical-32); }
+  .collection-header { margin-bottom:var(--space-optical-20); }
+  .project-card-cover { aspect-ratio:16 / 9; }
+  .project-card-copy { padding:var(--space-optical-20); }
+  .play-history { padding:var(--space-optical-20); }
+  .portfolio-home .home-collections > section,.portfolio-home .home-collections > section + section { padding:var(--space-md); }
+}
+@media(prefers-reduced-motion:reduce) {
+  .project-card,.card-arrow { transition:none; }
+}

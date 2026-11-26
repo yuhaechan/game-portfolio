@@ -101,7 +101,7 @@ export function Portfolio({ snapshot, projectId }: { snapshot: PortfolioSnapshot
   return <>
     <a className="skip-link" href="#main">본문으로 이동</a>
     <header className="site-header-bar"><div className="site-header"><Link className="site-brand" href="/" onClick={event => navigate(event)}>유해찬의 포트폴리오</Link><a className="header-contact" href="mailto:dbgocks99@naver.com"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.5" /><path d="m4 6 8 7 8-7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg><span>dbgocks99@naver.com</span></a></div></header>
-    <main id="main" className={`portfolio-main${active ? ` portfolio-detail${originalPdf(active) ? " portfolio-document" : ""}` : " portfolio-home"}`}>
+    <main id="main" data-look={active ? undefined : "darkroom"} className={`portfolio-main${active ? ` portfolio-detail${originalPdf(active) ? " portfolio-document" : ""}` : " portfolio-home"}`}>
       {preview && <p className="preview-banner">로컬 미리보기 · 비공개 프로젝트 포함</p>}
       {active ? <div className="detail-layout">
         <nav className="detail-nav" aria-label="작업 문서 목록">
@@ -143,7 +143,7 @@ export function Portfolio({ snapshot, projectId }: { snapshot: PortfolioSnapshot
             <h2 id="project-videos-title">참고자료</h2>
             {active.videos.filter(video => videoAssetPattern.test(video.url)).map(video => <figure key={video.url}>
               <figcaption>{video.name}</figcaption>
-              <video controls playsInline preload="metadata" controlsList="nodownload" aria-label={video.name}>
+              <video controls playsInline preload="metadata" poster={active.cover ? assetUrl(active.cover) : undefined} controlsList="nodownload" aria-label={video.name}>
                 <source src={preview ? `http://127.0.0.1:4310${video.url}` : assetUrl(video.url)} type="video/mp4" />
                 이 브라우저에서는 영상을 재생할 수 없습니다.
               </video>
@@ -151,7 +151,7 @@ export function Portfolio({ snapshot, projectId }: { snapshot: PortfolioSnapshot
           </section>}
         </article>
       </div> : <>
-        <h1 className="sr-only">{data.title}</h1>
+        <h1 className="home-title">{data.title}</h1>
         <div className="home-layout">
           <div className="home-collections">
             {homeCollections.map(({ section, anchor, label }) => {
@@ -169,11 +169,11 @@ export function Portfolio({ snapshot, projectId }: { snapshot: PortfolioSnapshot
                   <h2 id={`${anchor}-heading`} className="collection-heading">{label}</h2>
                 </div>
                 <div className="project-list">
-                  {visibleEntries.map(project => (
+                  {visibleEntries.map((project, index) => (
                     <Link className="project-card" key={project.id} href={`/projects/${project.id}/`} onClick={event => navigate(event, project.id)}>
                       <div className="project-card-cover">
                         {project.cover ? (
-                          <img src={preview ? `http://127.0.0.1:4310${project.cover}` : assetUrl(project.cover)} alt="" className="project-thumbnail" loading="lazy" />
+                          <img src={preview ? `http://127.0.0.1:4310${project.cover}` : assetUrl(project.cover)} alt="" className="project-thumbnail" loading={section === "planning" && index === 0 ? "eager" : "lazy"} fetchPriority={section === "planning" && index === 0 ? "high" : "auto"} />
                         ) : (
                           <span className="project-cover-placeholder" aria-hidden="true">{project.title}</span>
                         )}

@@ -1,0 +1,155 @@
+/* Hallmark · shape: kept A gallery · genre: editorial / atmospheric · redesign: restyle
+ * themes: Atelier, Darkroom amber, Newsprint · dealt: 2026-11-26 seed da8d940a
+ * hero: kept · nav: original name and email · signature: original planning document covers
+ * critique: three different type voices and surface systems, not color swaps
+ * adaptations: Korean Batang serif and Malgun Gothic sans; no decorative animation; original covers stay in color for identification
+ * user-kept: two content groups, independent document cards, Steam well and bordered time summary */
+:root:has(.portfolio-home[data-look]) {
+  --direction-font-serif:"Batang", "바탕", Georgia, serif;
+  --direction-font-sans:"Malgun Gothic", "Segoe UI", sans-serif;
+  --direction-header:var(--color-ink);
+  --direction-header-ink:var(--color-paper);
+  --direction-card:var(--color-paper-2);
+  --direction-rule:var(--color-rule);
+  --direction-well:var(--color-paper-3);
+  --direction-radius:0px;
+  --direction-card-radius:0px;
+  --direction-section-rule:1px solid var(--color-ink);
+  --direction-section-weight:400;
+  --direction-work-weight:400;
+  --direction-card-shadow:none;
+  --direction-cover-padding:16px;
+  --direction-font-heading:var(--direction-font-serif);
+  --direction-font-copy:var(--direction-font-sans);
+}
+:root:has(.portfolio-home[data-look="atelier"]) {
+  --color-paper:var(--direction-color-1);
+  --color-paper-2:var(--direction-color-2);
+  --color-paper-3:var(--direction-color-3);
+  --color-ink:var(--direction-color-4);
+  --color-ink-2:var(--direction-color-5);
+  --color-muted:var(--direction-color-6);
+  --color-rule:var(--direction-color-7);
+  --color-rule-strong:var(--direction-color-8);
+  --color-accent:var(--direction-color-9);
+  --color-accent-ink:var(--direction-color-10);
+  --color-focus:var(--direction-color-11);
+  --direction-header:var(--color-paper);
+  --direction-header-ink:var(--color-ink);
+  --direction-radius:2px;
+  --direction-card-radius:2px;
+  --direction-card-shadow:0 8px 20px var(--direction-color-12);
+  --direction-card-edge:var(--direction-color-13);
+  --direction-card-lit:var(--direction-color-14);
+}
+:root:has(.portfolio-home[data-look="darkroom"]) {
+  --color-paper:var(--direction-color-15);
+  --color-paper-2:var(--direction-color-16);
+  --color-paper-3:var(--direction-color-17);
+  --color-ink:var(--direction-color-18);
+  --color-ink-2:var(--direction-color-19);
+  --color-muted:var(--direction-color-20);
+  --color-rule:var(--direction-color-21);
+  --color-rule-strong:var(--direction-color-22);
+  --color-accent:var(--direction-color-23);
+  --color-accent-ink:var(--direction-color-24);
+  --color-focus:var(--direction-color-25);
+  --color-disabled-ink:var(--direction-color-26);
+  --color-disabled-fill:var(--direction-color-27);
+  --direction-font-heading:var(--direction-font-sans);
+  --direction-section-rule:2px solid var(--color-rule-strong);
+  --direction-cover-padding:0px;
+  --direction-header:var(--color-paper-3);
+  --direction-header-ink:var(--color-ink);
+}
+:root:has(.portfolio-home[data-look="newsprint"]) {
+  --color-paper:var(--direction-color-28);
+  --color-paper-2:var(--direction-color-29);
+  --color-paper-3:var(--direction-color-30);
+  --color-ink:var(--direction-color-31);
+  --color-ink-2:var(--direction-color-32);
+  --color-muted:var(--direction-color-33);
+  --color-rule:var(--direction-color-34);
+  --color-rule-strong:var(--direction-color-35);
+  --color-accent:var(--direction-color-36);
+  --color-accent-ink:var(--direction-color-37);
+  --color-focus:var(--direction-color-38);
+  --direction-header:var(--color-paper);
+  --direction-header-ink:var(--color-ink);
+  --direction-font-copy:var(--direction-font-serif);
+  --direction-section-rule:4px double var(--color-ink);
+  --direction-section-weight:700;
+  --direction-work-weight:700;
+  --direction-cover-padding:0px;
+}
+:root:has(.portfolio-home[data-look]) body { background:var(--color-paper); color:var(--color-ink); font-family:var(--direction-font-copy); }
+:root:has(.portfolio-home[data-look]) .site-header-bar { background:var(--direction-header); color:var(--direction-header-ink); border-bottom:1px solid var(--color-rule); }
+:root:has(.portfolio-home[data-look]) .site-brand { font-family:var(--direction-font-heading); font-size:22px; font-weight:var(--direction-section-weight); }
+:root:has(.portfolio-home[data-look]) .header-contact { color:var(--direction-header-ink); font-family:var(--direction-font-copy); }
+:root:has(.portfolio-home[data-look]) .site-header a:focus-visible { outline-color:var(--color-focus); }
+.portfolio-home[data-look] { background:var(--color-paper); color:var(--color-ink); }
+[data-look] .home-layout { gap:var(--space-xl); padding-top:var(--space-xl); }
+[data-look] .home-collections { gap:var(--space-xl); }
+.portfolio-home[data-look] .home-collections > section { background:var(--direction-well); border-radius:var(--direction-radius); padding:var(--space-lg); }
+.portfolio-home[data-look] .collection-header { border-bottom:var(--direction-section-rule); padding-bottom:var(--space-lg); margin-bottom:var(--space-lg); }
+[data-look] .collection-header .collection-heading { font:var(--direction-section-weight) 32px/1.3 var(--direction-font-heading); letter-spacing:-.035em; color:var(--color-ink); }
+[data-look] .project-list { gap:var(--space-lg); }
+[data-look] .project-card { border:1px solid var(--direction-rule); border-radius:var(--direction-card-radius); background:var(--direction-card); color:var(--color-ink); box-shadow:var(--direction-card-shadow); }
+[data-look] .project-card-cover { aspect-ratio:16 / 10; padding:var(--direction-cover-padding); background:var(--direction-card); border-color:var(--color-rule); }
+[data-look] .project-card-copy { padding:var(--space-lg); }
+[data-look] .project-card-copy h3 { font:var(--direction-work-weight) 23px/1.45 var(--direction-font-heading); letter-spacing:-.03em; }
+[data-look] .work-title { font-weight:var(--direction-work-weight); }
+[data-look] .project-card-copy .game-title { font:400 14px/1.5 var(--direction-font-copy); color:var(--color-muted); }
+[data-look] .category,[data-look] .card-date { font-family:var(--direction-font-copy); color:var(--color-muted); }
+[data-look] .play-history { padding:var(--space-lg); border-radius:var(--direction-radius); background:var(--direction-well); color:var(--color-ink); }
+[data-look] .steam-history-header .collection-heading { font:var(--direction-section-weight) 21px/1.4 var(--direction-font-heading); color:var(--color-ink); }
+[data-look] .steam-total { border:1px solid var(--color-rule-strong); background:var(--direction-card); border-radius:var(--direction-card-radius); }
+[data-look] .steam-total strong { font:var(--direction-section-weight) 44px/1.1 var(--direction-font-heading); color:var(--color-ink); letter-spacing:-.05em; }
+[data-look] .steam-total > span,[data-look] .steam-total p > span,[data-look] .steam-total small { color:var(--color-muted); }
+[data-look] .steam-games li { border-radius:var(--direction-card-radius); background:var(--direction-card); }
+[data-look] .steam-games a { font-family:var(--direction-font-copy); font-weight:400; color:var(--color-ink); }
+[data-look] .steam-time-track { background:var(--color-rule); }
+[data-look] .steam-time-track > span { background:var(--color-ink-2); }
+[data-look] .steam-time > span:last-child,[data-look] .steam-updated { color:var(--color-muted); font-family:var(--direction-font-copy); }
+[data-look] .steam-icon { background:var(--color-rule); color:var(--color-ink-2); }
+[data-look] .steam-filter-controls .filter-trigger,[data-look] .steam-pagination button { color:var(--color-ink); border-color:var(--color-rule-strong); background:var(--direction-card); border-radius:var(--direction-card-radius); }
+[data-look] .steam-selected-genre { color:var(--color-accent); border-color:var(--color-accent); background:var(--direction-card); border-radius:var(--direction-card-radius); }
+[data-look] .steam-filter-controls .filter-trigger[aria-expanded="true"],[data-look] .steam-filter-controls .filter-trigger[data-filter-active="true"] { color:var(--color-accent); border-color:var(--color-accent); }
+[data-look] .steam-filter-panel { background:var(--direction-card); border-color:var(--color-rule-strong); border-radius:var(--direction-card-radius); box-shadow:none; }
+[data-look] .steam-genre-option { background:var(--color-paper); color:var(--color-ink); border-color:var(--color-rule-strong); border-radius:var(--direction-card-radius); }
+[data-look] .steam-genre-option[aria-pressed="true"] { background:var(--color-accent); color:var(--color-accent-ink); border-color:var(--color-accent); }
+[data-look] .steam-pagination button:disabled { background:var(--direction-well); color:var(--color-muted); cursor:not-allowed; }
+[data-look="atelier"] .project-card { border-color:transparent; outline:1px solid var(--direction-card-edge); outline-offset:-8px; }
+[data-look="atelier"] .project-card-copy { padding-top:var(--space-md); padding-bottom:var(--space-optical-32); }
+[data-look="atelier"] .project-card-copy h3 { text-shadow:0 1px var(--direction-card-lit); }
+[data-look="darkroom"] .collection-header .collection-heading { font-size:34px; font-weight:600; }
+.portfolio-home[data-look="darkroom"] .home-collections > section,
+[data-look="darkroom"] .play-history { border:1px solid var(--color-rule); }
+[data-look="darkroom"] .project-card { border:1px solid var(--color-rule); }
+[data-look="darkroom"] .project-card-cover { aspect-ratio:16 / 11; }
+[data-look="darkroom"] .project-card-copy { padding:var(--space-lg) var(--space-md); }
+[data-look="darkroom"] .steam-time-track > span { background:var(--color-accent); }
+[data-look="newsprint"] .project-card { border:0; border-bottom:1px solid var(--color-ink); background:transparent; }
+[data-look="newsprint"] .project-card-cover { aspect-ratio:16 / 9; border:1px solid var(--color-rule); }
+[data-look="newsprint"] .project-card-copy { padding:var(--space-lg) 0; }
+[data-look="newsprint"] .project-card-copy h3 { font-size:25px; }
+[data-look="newsprint"] .play-history { border-block:4px double var(--color-ink); }
+[data-look="newsprint"] .steam-games { gap:0; }
+[data-look="newsprint"] .steam-games li { padding:var(--space-md) 0; border-bottom:1px solid var(--color-rule); background:transparent; }
+[data-look="newsprint"] .steam-total strong { font-weight:700; }
+@media(hover:hover) and (pointer:fine) {
+  [data-look] .project-card:hover { transform:none; box-shadow:var(--direction-card-shadow); border-color:var(--color-ink); }
+  [data-look] .project-card:hover .work-title { color:var(--color-accent); }
+  [data-look] .steam-genre-option:hover,[data-look] .steam-pagination button:hover:not(:disabled) { background:var(--color-ink); color:var(--color-paper); border-color:var(--color-ink); }
+  [data-look] .steam-selected-genre:hover { background:var(--color-accent); color:var(--color-accent-ink); }
+}
+@media(max-width:639px) {
+  .portfolio-home[data-look] .home-collections > section { padding:var(--space-md); }
+  [data-look] .collection-header .collection-heading { font-size:28px; }
+  [data-look] .project-card-copy { padding:var(--space-optical-20); }
+  [data-look] .project-card-copy h3 { font-size:22px; }
+  [data-look="newsprint"] .project-card-copy { padding-inline:0; }
+  :root:has(.portfolio-home[data-look]) .site-brand { font-size:19px; }
+}
+
+

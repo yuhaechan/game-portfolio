@@ -1,0 +1,65 @@
+/* Impeccable polish · Darkroom identity retained; clearer hierarchy, fitted covers and softer cards. */
+@font-face {
+  font-family:"SUIT";
+  src:url("../../public/fonts/SUIT-Variable.woff2") format("woff2");
+  font-weight:100 900;
+  font-style:normal;
+  font-display:swap;
+}
+:root:has(.portfolio-home[data-look="darkroom"]) {
+  --direction-font-sans:"SUIT", "Malgun Gothic", sans-serif;
+  --direction-card-radius:12px;
+  --direction-radius:16px;
+  --direction-section-rule:1px solid var(--color-rule-strong);
+  --color-paper:oklch(16% .004 65);
+  --color-paper-2:oklch(32% .006 65);
+  --color-paper-3:oklch(24% .005 65);
+  --color-ink:oklch(96% .007 80);
+  --color-muted:oklch(78% .008 75);
+  --color-rule:oklch(42% .006 65);
+  --color-rule-strong:oklch(59% .006 65);
+  --direction-header:var(--color-paper);
+}
+:root:has(.portfolio-home[data-look="darkroom"]) {
+  scrollbar-color:var(--color-rule-strong) var(--color-paper);
+}
+:root:has(.portfolio-home[data-look="darkroom"]) ::selection { background:var(--color-accent); color:var(--color-accent-ink); }
+:root:has(.portfolio-home[data-look="darkroom"]) .site-brand { font-size:21px; font-weight:650; letter-spacing:-.02em; }
+:root:has(.portfolio-home[data-look="darkroom"]) .site-header-bar { border-bottom-color:var(--color-rule); }
+.portfolio-home[data-look="darkroom"] .home-collections > section { padding:var(--space-lg); border-color:var(--color-paper-3); }
+[data-look="darkroom"] .home-collections { gap:var(--space-optical-48); }
+.portfolio-home[data-look="darkroom"] .collection-header { padding-bottom:var(--space-md); margin-bottom:var(--space-lg); }
+[data-look="darkroom"] .collection-header .collection-heading { font-size:28px; font-weight:700; letter-spacing:-.025em; }
+[data-look="darkroom"] .project-card { border-color:var(--color-rule); transition:border-color 180ms ease,background-color 180ms ease; }
+[data-look="darkroom"] .project-card-cover { aspect-ratio:16 / 9; border-bottom:1px solid var(--color-rule); }
+[data-look="darkroom"] .project-card-copy { padding:var(--space-lg); }
+[data-look="darkroom"] .project-card-copy h3 { font-size:22px; line-height:1.5; gap:var(--space-xs); letter-spacing:-.02em; text-wrap:balance; }
+[data-look="darkroom"] .project-card-copy .game-title { font-size:15px; font-weight:500; color:var(--color-muted); }
+[data-look="darkroom"] .work-title { font-weight:650; }
+[data-look="darkroom"] .category { margin-top:var(--space-md); font-size:13px; }
+[data-look="darkroom"] .card-date { font-size:12px; margin-top:var(--space-xs); }
+[data-look="darkroom"] .play-history { border-color:var(--color-paper-3); }
+[data-look="darkroom"] .steam-history-header .collection-heading { font-size:20px; font-weight:650; }
+[data-look="darkroom"] .steam-total { border-color:var(--color-rule-strong); padding:var(--space-lg); }
+[data-look="darkroom"] .steam-total strong { font-size:42px; font-weight:600; letter-spacing:-.03em; }
+[data-look="darkroom"] .steam-games { gap:0; }
+[data-look="darkroom"] .steam-games li { background:transparent; padding:var(--space-md) 0; border-bottom:1px solid var(--color-rule); border-radius:0; }
+[data-look="darkroom"] .steam-games a { font-weight:500; }
+[data-look="darkroom"] .steam-time > span:last-child { font-variant-numeric:tabular-nums; }
+[data-look="darkroom"] .steam-filter-controls .filter-trigger,
+[data-look="darkroom"] .steam-pagination button { min-width:44px; min-height:44px; border-radius:8px; }
+[data-look="darkroom"] .steam-filter-panel { left:52px; border-radius:12px; }
+[data-look="darkroom"] .steam-genre-option { min-height:44px; border-radius:8px; }
+@media(hover:hover) and (pointer:fine) {
+  [data-look="darkroom"] .project-card:hover { background:var(--color-paper-3); border-color:var(--color-accent); }
+  [data-look="darkroom"] .project-card:hover .work-title { color:var(--color-ink); }
+}
+@media(max-width:639px) {
+  .portfolio-home[data-look="darkroom"] .home-collections > section { padding:var(--space-md); }
+  [data-look="darkroom"] .collection-header .collection-heading { font-size:25px; }
+  [data-look="darkroom"] .project-card-copy { padding:var(--space-optical-20); }
+  [data-look="darkroom"] .project-card-copy h3 { font-size:21px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  [data-look="darkroom"] .project-card { transition:none; }
+}

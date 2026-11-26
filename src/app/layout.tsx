@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./home-design.css";
+import "./visual-directions.css";
+import "./darkroom-refinement.css";
 import { published } from "@/lib/published";
 
 export const metadata: Metadata = {
